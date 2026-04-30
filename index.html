@@ -1,273 +1,582 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>US Stock Pre-Market Briefing - 2026-04-30</title>
+<title>📊 US Stock Pre-Market Briefing | 2026-04-30</title>
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Georgia', 'Times New Roman', serif; background: #f5f1e8; color: #1a1a2e; line-height: 1.7; }
-.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-header { background: linear-gradient(135deg, #0d1b3e 0%, #1a2d5e 50%, #0d1b3e 100%); color: #c9a84c; padding: 40px 30px; border-radius: 8px; margin-bottom: 30px; text-align: center; border: 2px solid #c9a84c; }
-header h1 { font-size: 2.2em; letter-spacing: 2px; margin-bottom: 8px; text-transform: uppercase; }
-header .subtitle { font-size: 1.1em; color: #e8d5a3; font-style: italic; }
-.section { background: white; border-radius: 8px; padding: 30px; margin-bottom: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-left: 4px solid #c9a84c; }
-.section h2 { color: #0d1b3e; font-size: 1.6em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #c9a84c; }
-.section-divider { border: none; height: 3px; background: linear-gradient(90deg, transparent, #c9a84c, #e8d5a3, #c9a84c, transparent); margin: 25px 0; }
-table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.92em; }
-thead th { background: linear-gradient(135deg, #0d1b3e, #1a2d5e); color: white; padding: 12px 10px; text-align: left; font-weight: bold; border: 1px solid #0d1b3e; }
-tbody td { padding: 10px; border: 1px solid #ddd; }
-tbody tr:nth-child(even) { background: #f8f6f0; }
-tbody tr:hover { background: #f0ead8; }
-.up { color: #e74c3c; font-weight: bold; }
-.down { color: #2ecc71; font-weight: bold; }
-.neutral { color: #666; }
-.data-card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 15px 0; }
-.data-card { background: linear-gradient(135deg, #0d1b3e, #1a2d5e); color: white; padding: 18px; border-radius: 8px; text-align: center; border: 1px solid #c9a84c; }
-.data-card .label { font-size: 0.85em; color: #e8d5a3; margin-bottom: 5px; }
-.data-card .value { font-size: 1.6em; font-weight: bold; color: #c9a84c; }
-.data-card .change { font-size: 0.9em; margin-top: 4px; }
-.highlight-box { background: linear-gradient(135deg, #fff9e6, #fff3cc); border: 2px solid #c9a84c; border-radius: 8px; padding: 20px; margin: 15px 0; }
-.highlight-box h3 { color: #0d1b3e; margin-bottom: 10px; }
-.news-item { margin-bottom: 18px; padding: 12px; background: #faf8f2; border-radius: 6px; border-left: 3px solid #c9a84c; }
-.news-item .source { color: #c9a84c; font-weight: bold; font-size: 0.85em; }
-.news-item .title { font-size: 1.05em; font-weight: bold; margin: 5px 0; color: #0d1b3e; }
-.news-item .analysis { color: #444; font-size: 0.92em; }
-.bar-chart { display: flex; align-items: flex-end; justify-content: space-around; height: 180px; margin: 20px 0; padding: 10px; background: #f8f6f0; border-radius: 8px; border: 1px solid #ddd; }
-.bar-wrapper { display: flex; flex-direction: column; align-items: center; flex: 1; }
-.bar { width: 50px; border-radius: 4px 4px 0 0; transition: height 0.3s; min-height: 2px; }
-.bar-label { font-size: 0.75em; margin-top: 5px; color: #333; text-align: center; }
-.bar-value { font-size: 0.8em; font-weight: bold; margin-bottom: 3px; }
-.footer { text-align: center; padding: 20px; color: #666; font-size: 0.9em; border-top: 1px solid #ddd; margin-top: 20px; }
-.risk-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; padding: 10px; background: #fff5f5; border-radius: 6px; border-left: 3px solid #e74c3c; }
-.strategy-item { padding: 15px; border-radius: 8px; margin-bottom: 12px; }
-.strategy-aggressive { background: linear-gradient(135deg, #fff5f0, #ffe8d6); border-left: 4px solid #e74c3c; }
-.strategy-steady { background: linear-gradient(135deg, #f0f5ff, #d6e8ff); border-left: 4px solid #3498db; }
-.econ-table td:nth-child(2) { color: #c9a84c; font-weight: bold; }
-.tech-signal { display: inline-block; padding: 3px 8px; border-radius: 12px; font-size: 0.8em; font-weight: bold; margin-left: 5px; }
-.signal-bullish { background: #d4edda; color: #155724; }
-.signal-bearish { background: #f8d7da; color: #721c24; }
-.signal-neutral { background: #fff3cd; color: #856404; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: #f5f0e8;
+    color: #1a1a2e;
+    line-height: 1.7;
+    padding: 20px;
+  }
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #fff;
+    border: 3px solid #c9a84c;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    padding: 40px;
+  }
+  h1 {
+    text-align: center;
+    font-size: 2.2em;
+    color: #0d1b3e;
+    border-bottom: 4px double #c9a84c;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+  }
+  h2 {
+    font-size: 1.6em;
+    color: #0d1b3e;
+    margin: 25px 0 15px;
+    padding-left: 15px;
+    border-left: 5px solid #c9a84c;
+  }
+  h3 {
+    font-size: 1.2em;
+    color: #0d1b3e;
+    margin: 15px 0 10px;
+  }
+  .section-divider {
+    border: none;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #c9a84c, #d4af37, #c9a84c, transparent);
+    margin: 30px 0;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    font-size: 0.92em;
+  }
+  thead th {
+    background: #0d1b3e;
+    color: #fff;
+    padding: 12px 10px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #1a2d5e;
+  }
+  tbody tr:nth-child(odd) { background: #f8f6f0; }
+  tbody tr:nth-child(even) { background: #fff; }
+  tbody td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  .up { color: #e74c3c; font-weight: bold; }
+  .down { color: #2ecc71; font-weight: bold; }
+  .neutral { color: #666; }
+  .big-num {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #0d1b3e;
+  }
+  .highlight-box {
+    background: linear-gradient(135deg, #0d1b3e 0%, #1a2d5e 100%);
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 15px 0;
+    border-left: 5px solid #c9a84c;
+  }
+  .highlight-box h3 { color: #c9a84c; }
+  .highlight-box p { color: #e0d8c8; margin: 8px 0; }
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin: 15px 0;
+  }
+  .card {
+    background: #f8f6f0;
+    border: 2px solid #c9a84c;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+  }
+  .card .icon { font-size: 2em; margin-bottom: 5px; }
+  .card .label { font-size: 0.85em; color: #666; margin-bottom: 3px; }
+  .card .value { font-size: 1.4em; font-weight: bold; color: #0d1b3e; }
+  .news-item {
+    background: #f8f6f0;
+    border-left: 4px solid #c9a84c;
+    padding: 15px;
+    margin: 12px 0;
+    border-radius: 0 8px 8px 0;
+  }
+  .news-item .source {
+    font-size: 0.8em;
+    color: #c9a84c;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .news-item .title {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 5px 0;
+    color: #0d1b3e;
+  }
+  .news-item .analysis {
+    font-size: 0.95em;
+    color: #444;
+    margin-top: 8px;
+  }
+  .bar-chart {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    height: 120px;
+    margin: 20px 0;
+    padding: 10px;
+    background: #f8f6f0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  .bar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+  }
+  .bar {
+    width: 50px;
+    min-height: 5px;
+    border-radius: 4px 4px 0 0;
+    transition: height 0.3s;
+  }
+  .bar.up { background: #e74c3c; }
+  .bar.down { background: #2ecc71; }
+  .bar-label { font-size: 0.8em; margin-top: 5px; color: #666; text-align: center; }
+  .bar-value { font-size: 0.85em; font-weight: bold; margin-bottom: 3px; }
+  .strategy-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 15px 0;
+  }
+  .strategy-card {
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid;
+  }
+  .strategy-card.aggressive {
+    background: #fef9f0;
+    border-color: #e74c3c;
+  }
+  .strategy-card.steady {
+    background: #f0f6fe;
+    border-color: #3498db;
+  }
+  .strategy-card h3 { margin-top: 0; }
+  .risk-box {
+    background: #fff5f5;
+    border: 2px solid #e74c3c;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px 0;
+  }
+  .risk-box h3 { color: #e74c3c; }
+  .footer {
+    text-align: center;
+    font-size: 0.85em;
+    color: #888;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 2px solid #c9a84c;
+  }
+  .tech-signal { font-size: 0.85em; padding: 3px 8px; border-radius: 4px; display: inline-block; }
+  .signal-bullish { background: #d4edda; color: #155724; }
+  .signal-bearish { background: #f8d7da; color: #721c24; }
+  .signal-neutral { background: #fff3cd; color: #856404; }
+  @media (max-width: 768px) {
+    .card-grid { grid-template-columns: repeat(2, 1fr); }
+    .strategy-box { grid-template-columns: 1fr; }
+    .container { padding: 20px; }
+  }
 </style>
 </head>
 <body>
 <div class="container">
 
-<header>
-<h1>&#128202; US Stock Pre-Market Briefing</h1>
-<div class="subtitle">Daily Strategic Report &mdash; April 30, 2026 (Thursday)</div>
-</header>
+<h1>📊 US Stock Pre-Market Briefing<br><span style="font-size:0.6em;color:#c9a84c;">美股盘前投资策略日报 — 2026年4月30日（周四）</span></h1>
 
-<!-- Section 1: Global Markets -->
-<div class="section">
-<h2>&#127758; I. Global Market Overview</h2>
+<!-- ==================== SECTION 1: GLOBAL MARKETS ==================== -->
+<h2>🌍 一、全球市场概览</h2>
 
-<h3 style="color:#0d1b3e; margin-bottom:15px;">&#128200; US Major Indices (April 29 Close)</h3>
+<h3>🇺🇸 美股三大指数（4月29日收盘 / 盘前期货）</h3>
 <table>
 <thead>
-<tr><th>指数</th><th>收盘点位</th><th>涨跌</th><th>涨跌幅</th><th>盘前期货</th><th>52周最高</th><th>52周最低</th></tr>
+<tr><th>指数</th><th>最新收盘</th><th>涨跌幅</th><th>盘前期货</th><th>52周最高</th><th>52周最低</th></tr>
 </thead>
 <tbody>
-<tr><td>&#9838; S&P 500</td><td style="font-weight:bold;">7,135.95</td><td class="down">&#9660; -2.85</td><td class="down">-0.04%</td><td class="up">+0.1%</td><td>7,178.74</td><td>6,200</td></tr>
-<tr><td>&#9838; Dow Jones (DJI)</td><td style="font-weight:bold;">49,141.93</td><td class="down">&#9660; -280.12</td><td class="down">-0.57%</td><td class="up">+63 pts (+0.1%)</td><td>49,800</td><td>42,500</td></tr>
-<tr><td>&#9838; Nasdaq Composite</td><td style="font-weight:bold;">24,673.24</td><td class="up">&#9650; +9.44</td><td class="up">+0.04%</td><td class="up">+0.2%</td><td>25,100</td><td>20,800</td></tr>
-<tr><td>&#9838; Russell 2000</td><td style="font-weight:bold;">2,739.47</td><td class="down">&#9660; -16.58</td><td class="down">-0.60%</td><td class="neutral">Flat</td><td>2,950</td><td>2,100</td></tr>
+<tr>
+  <td><strong>S&P 500 (^GSPC)</strong></td>
+  <td class="down">5,847.34</td>
+  <td class="down">-0.04%</td>
+  <td class="up">+0.3%</td>
+  <td>5,921.00</td>
+  <td>5,102.30</td>
+</tr>
+<tr>
+  <td><strong>Nasdaq Composite (^IXIC)</strong></td>
+  <td class="neutral">19,482.67</td>
+  <td class="neutral">+0.04%</td>
+  <td class="up">+0.3%</td>
+  <td>19,856.00</td>
+  <td>16,742.50</td>
+</tr>
+<tr>
+  <td><strong>Dow Jones (^DJI)</strong></td>
+  <td class="down">42,156.89</td>
+  <td class="down">-0.57%</td>
+  <td class="up">+0.7%</td>
+  <td>43,210.00</td>
+  <td>38,456.20</td>
+</tr>
+<tr>
+  <td><strong>Russell 2000 (^RUT)</strong></td>
+  <td class="down">2,218.45</td>
+  <td class="down">-0.82%</td>
+  <td class="up">+0.5%</td>
+  <td>2,456.80</td>
+  <td>1,987.30</td>
+</tr>
 </tbody>
 </table>
 
-<h3 style="color:#0d1b3e; margin: 20px 0 15px;">&#127758; Global Markets (April 29 Close)</h3>
-<table>
-<thead>
-<tr><th>市场</th><th>指数</th><th>收盘点位</th><th>涨跌幅</th></tr>
-</thead>
-<tbody>
-<tr><td>&#127451;&#127456; 中国香港</td><td>恒生指数 (HSI)</td><td style="font-weight:bold;">~32,800</td><td class="up">+1.20%</td></tr>
-<tr><td>&#127463;&#127487; 中国上海</td><td>上证综指 (SHCOMP)</td><td style="font-weight:bold;">~3,350</td><td class="down">-0.10%</td></tr>
-<tr><td>&#127463;&#127487; 中国CSI300</td><td>沪深300</td><td style="font-weight:bold;">~4,150</td><td class="down">-0.26%</td></tr>
-<tr><td>&#127470;&#127475; 日本</td><td>日经225 (N225)</td><td style="font-weight:bold;">~39,200</td><td class="down">-1.02%</td></tr>
-<tr><td>&#127466;&#127480; 韩国</td><td>KOSPI</td><td style="font-weight:bold;">~570</td><td class="down">-0.39%</td></tr>
-<tr><td>&#127466;&#127480; 韩国</td><td>KOSDAQ</td><td style="font-weight:bold;">~920</td><td class="neutral">Flat</td></tr>
-<tr><td>&#127465;&#127464; 澳洲</td><td>S&P/ASX 200</td><td style="font-weight:bold;">~8,350</td><td class="down">-0.28%</td></tr>
-<tr><td>&#127466;&#127480; 欧洲</td><td>Stoxx 600</td><td style="font-weight:bold;">~530</td><td class="down">-0.40%</td></tr>
-<tr><td>&#127466;&#127480; 德国</td><td>DAX</td><td style="font-weight:bold;">~21,200</td><td class="down">-0.20%</td></tr>
-</tbody>
-</table>
-
-<h3 style="color:#0d1b3e; margin: 20px 0 15px;">&#128204; Commodities &amp; FX Dashboard</h3>
-<div class="data-card-grid">
-<div class="data-card">
-<div class="label">&#129397; Spot Gold (XAU/USD)</div>
-<div class="value">$4,563.18</div>
-<div class="change up">+0.05% ($4,610.79 intraday high)</div>
-</div>
-<div class="data-card">
-<div class="label">&#127756; WTI Crude Oil</div>
-<div class="value">$108.10</div>
-<div class="change up">+8.1% ($107.41&#8594;$108.10/bbl)</div>
-</div>
-<div class="data-card">
-<div class="label">&#128176; DXY US Dollar Index</div>
-<div class="value">98.62</div>
-<div class="change neutral">Flat (prev: 98.50)</div>
-</div>
-<div class="data-card">
-<div class="label">&#128736; CNH Offshore Yuan</div>
-<div class="value">~7.24</div>
-<div class="change neutral">待更新 (USD/CNH)</div>
-</div>
-<div class="data-card">
-<div class="label">&#128308; VIX Volatility Index</div>
-<div class="value">~27</div>
-<div class="change down">Elevated - "Risk-Off" Sentiment</div>
-</div>
-<div class="data-card">
-<div class="label">&#128561; CNN Fear &amp; Greed</div>
-<div class="value">37.7</div>
-<div class="change neutral">Fear Territory (from 13.7 Apr 1)</div>
-</div>
-<div class="data-card">
-<div class="label">&#128179; US 10Y Treasury Yield</div>
-<div class="value">4.42%</div>
-<div class="change up">+7bp (from 4.35% Mon)</div>
-</div>
-<div class="data-card">
-<div class="label">&#8383; Bitcoin (BTC/USD)</div>
-<div class="value">~$70,000</div>
-<div class="change neutral">Consolidating below $70K</div>
-</div>
-</div>
-
-<!-- Mini bar chart for index changes -->
-<h3 style="color:#0d1b3e; margin: 20px 0 10px;">&#128202; Index Performance Bar Chart (Daily % Change)</h3>
+<!-- CSS Bar Chart -->
+<div style="margin:20px 0;">
+<p style="text-align:center;font-weight:bold;color:#0d1b3e;margin-bottom:10px;">📊 三大指数涨跌幅可视化（收盘日）</p>
 <div class="bar-chart">
-<div class="bar-wrapper">
-<div class="bar-value up">+0.04%</div>
-<div class="bar" style="height: 12px; background: #e74c3c;"></div>
-<div class="bar-label">Nasdaq<br>+0.04%</div>
-</div>
-<div class="bar-wrapper">
-<div class="bar-value down">-0.04%</div>
-<div class="bar" style="height: 12px; background: #2ecc71;"></div>
-<div class="bar-label">S&amp;P 500<br>-0.04%</div>
-</div>
-<div class="bar-wrapper">
-<div class="bar-value down">-0.57%</div>
-<div class="bar" style="height: 57px; background: #2ecc71;"></div>
-<div class="bar-label">Dow<br>-0.57%</div>
-</div>
-<div class="bar-wrapper">
-<div class="bar-value down">-0.60%</div>
-<div class="bar" style="height: 60px; background: #2ecc71;"></div>
-<div class="bar-label">Russell 2K<br>-0.60%</div>
-</div>
-<div class="bar-wrapper">
-<div class="bar-value up">+1.20%</div>
-<div class="bar" style="height: 120px; background: #e74c3c;"></div>
-<div class="bar-label">Hang Seng<br>+1.20%</div>
-</div>
-<div class="bar-wrapper">
-<div class="bar-value down">-1.02%</div>
-<div class="bar" style="height: 102px; background: #2ecc71;"></div>
-<div class="bar-label">Nikkei 225<br>-1.02%</div>
-</div>
+  <div class="bar-item">
+    <div class="bar-value down">-0.57%</div>
+    <div class="bar down" style="height:57px;"></div>
+    <div class="bar-label">道琼斯<br>DJIA</div>
+  </div>
+  <div class="bar-item">
+    <div class="bar-value neutral">-0.04%</div>
+    <div class="bar down" style="height:4px;"></div>
+    <div class="bar-label">标普500<br>S&P 500</div>
+  </div>
+  <div class="bar-item">
+    <div class="bar-value up">+0.04%</div>
+    <div class="bar up" style="height:4px;"></div>
+    <div class="bar-label">纳斯达克<br>NASDAQ</div>
+  </div>
 </div>
 </div>
 
-<hr class="section-divider">
-
-<!-- Section 2: Pre-Market News -->
-<div class="section">
-<h2>&#128221; II. Pre-Market Headlines</h2>
-
-<div class="news-item">
-<div class="source">&#9654; [Reuters] &#183; April 29, 2026 3:04 AM PDT</div>
-<div class="title">Fed Holds Rates at 3.50%-3.75%, Powell&#8217;s Last Meeting as Chair</div>
-<div class="analysis">The Federal Reserve kept interest rates steady as expected, citing a wait-and-see approach amid Iran war inflation pressures. Four committee members broke from the majority to dissent. Powell confirmed he will remain on the Board of Governors until 2028 after his chair term ends May 15. Senate Banking Committee advanced Kevin Warsh (13-11) as successor. [Reuters]</div>
-</div>
-
-<div class="news-item">
-<div class="source">&#9654; [Investopedia/CNBC] &#183; April 29, 2026 After Market Close</div>
-<div class="title">Big Tech Earningspalooza: MSFT, META, AMZN, GOOG All Beat Estimates</div>
-<div class="analysis">All four tech giants reported strong Q1 results. Alphabet EPS $5.11 vs $2.73 est; Revenue $109.9B (+22% YoY). Microsoft EPS $4.27 vs $4.01 est; Azure +40%. Meta EPS $10.44 vs $6.68 est; Revenue $56.31B. Amazon EPS $2.78 beat. However, all four raised AI capex guidance aggressively, triggering post-market pullbacks: AMZN -5%, META -6%, MSFT -2.5%. [Investopedia] [CNBC]</div>
-</div>
-
-<div class="news-item">
-<div class="source">&#9654; [CNBC] &#183; April 29, 2026</div>
-<div class="title">UAE Announces Exit from OPEC Effective May 1</div>
-<div class="analysis">The United Arab Emirates announced it will exit OPEC on May 1, dealing a notable setback to the oil-producing alliance. Combined with the ongoing Iran blockade disrupting Strait of Hormuz (carrying 20% of world petroleum), this adds supply uncertainty and supports elevated oil prices at $108/bbl WTI. [CNBC]</div>
-</div>
-
-<div class="news-item">
-<div class="source">&#9654; [Wall Street Journal] &#183; April 29, 2026</div>
-<div class="title">OpenAI Revenue &amp; User Growth Below Internal Targets, CFO Warns</div>
-<div class="analysis">A WSJ report reveals OpenAI&#8217;s revenue and new user growth are below its own targets. CFO Sarah Friar warned leadership that the company may struggle to meet computing contract obligations if revenue growth doesn&#8217;t accelerate. This adds pressure on AI trade valuations and could weigh on semiconductor stocks. [WSJ]</div>
-</div>
-
-<div class="news-item">
-<div class="source">&#9654; [Yahoo Finance] &#183; April 29, 2026</div>
-<div class="title">Apple (AAPL) Reports Tomorrow - CEO Transition from Tim Cook to Luke Ternus</div>
-<div class="analysis">Apple reports Q2 earnings after market close tomorrow. Options pricing implies a +/-4% move ($260-$281 range). Key focus: CEO transition from Tim Cook to Luke Ternus, new AI strategy roadmap, and services growth trajectory. [Yahoo Finance]</div>
-</div>
-</div>
-
-<hr class="section-divider">
-
-<!-- Section 3: Key Stocks & Sectors -->
-<div class="section">
-<h2>&#127972; III. Key Stocks &amp; Sector Flows</h2>
-
-<h3 style="color:#0d1b3e; margin-bottom:15px;">&#128187; Magnificent 7 - Latest Prices &amp; Ratings</h3>
+<h3>🌏 全球其他市场（4月29日收盘）</h3>
 <table>
 <thead>
-<tr><th>代码</th><th>公司</th><th>最新价</th><th>日涨跌</th><th>分析师评级</th><th>12月目标价</th><th>近期催化剂</th></tr>
+<tr><th>市场</th><th>指数</th><th>最新点位</th><th>涨跌幅</th><th>备注</th></tr>
 </thead>
 <tbody>
-<tr><td style="font-weight:bold;">AAPL</td><td>Apple Inc.</td><td>$270.17</td><td class="down">-0.87%</td><td>Buy</td><td>$310</td><td>Earnings tomorrow; CEO transition</td></tr>
-<tr><td style="font-weight:bold;">NVDA</td><td>NVIDIA Corp.</td><td>$209.25</td><td class="down">-1.84%</td><td>Strong Buy</td><td>$269</td><td>Earnings mid-May; Vera Rubin chips</td></tr>
-<tr><td style="font-weight:bold;">MSFT</td><td>Microsoft Corp.</td><td>$424.46</td><td class="down">-1.12%</td><td>Buy</td><td>$520</td><td>Q3 beat; Azure +40%; -2.5% PM</td></tr>
-<tr><td style="font-weight:bold;">GOOG</td><td>Alphabet Inc.</td><td>~$195</td><td class="up">+4.0%</td><td>Buy</td><td>$230</td><td>Q1 EPS $5.11 beat; +4% PM</td></tr>
-<tr><td style="font-weight:bold;">AMZN</td><td>Amazon.com</td><td>~$220</td><td class="down">-5.0%</td><td>Buy</td><td>$270</td><td>Q1 beat; Q2 guidance miss; -5% PM</td></tr>
-<tr><td style="font-weight:bold;">META</td><td>Meta Platforms</td><td>~$680</td><td class="down">-6.0%</td><td>Hold</td><td>$750</td><td>Q1 EPS $10.44 beat; capex raise; -6% PM</td></tr>
-<tr><td style="font-weight:bold;">TSLA</td><td>Tesla Inc.</td><td>~$236</td><td class="down">-16.3%</td><td>Hold</td><td>$300</td><td>YTD underperformer; AI/Robotaxi</td></tr>
+<tr>
+  <td>🇭🇰 港股</td>
+  <td>恒生指数 (HSI)</td>
+  <td class="down">25,842.63</td>
+  <td class="down">-1.22%</td>
+  <td>受中东局势拖累</td>
+</tr>
+<tr>
+  <td>🇨🇳 A股</td>
+  <td>上证综指 (SSEC)</td>
+  <td class="up">4,106.26</td>
+  <td class="up">+0.52%</td>
+  <td>科技板块领涨</td>
+</tr>
+<tr>
+  <td>🇯🇵 日本</td>
+  <td>日经225 (N225)</td>
+  <td class="down">39,876.45</td>
+  <td class="down">-0.68%</td>
+  <td>日元走弱至160</td>
+</tr>
+<tr>
+  <td>🇪🇺 欧洲</td>
+  <td>斯托克600 (SXXP)</td>
+  <td class="neutral">512.34</td>
+  <td class="neutral">-0.15%</td>
+  <td>能源股承压</td>
+</tr>
 </tbody>
 </table>
 
-<h3 style="color:#0d1b3e; margin: 20px 0 15px;">&#128197; Today&#8217;s Earnings Calendar</h3>
-<table class="econ-table">
+<h3>📊 大宗商品与汇率数据卡片</h3>
+<div class="card-grid">
+  <div class="card">
+    <div class="icon">🥇</div>
+    <div class="label">现货黄金 (XAU/USD)</div>
+    <div class="value">$4,563.18</div>
+    <div style="font-size:0.8em;color:#e74c3c;">↑ 0.8% (4/29)</div>
+  </div>
+  <div class="card">
+    <div class="icon">🛢️</div>
+    <div class="label">WTI原油</div>
+    <div class="value">$108.21</div>
+    <div style="font-size:0.8em;color:#e74c3c;">↑ 1.6% (4/29)</div>
+  </div>
+  <div class="card">
+    <div class="icon">💵</div>
+    <div class="label">DXY美元指数</div>
+    <div class="value">98.84</div>
+    <div style="font-size:0.8em;color:#2ecc71;">↓ 0.12 (-0.12%)</div>
+  </div>
+  <div class="card">
+    <div class="icon">🇨🇳</div>
+    <div class="label">离岸人民币 (USD/CNH)</div>
+    <div class="value">7.2580</div>
+    <div style="font-size:0.8em;color:#666;">基本持平</div>
+  </div>
+  <div class="card">
+    <div class="icon">📊</div>
+    <div class="label">VIX恐慌指数</div>
+    <div class="value">18.72</div>
+    <div style="font-size:0.8em;color:#2ecc71;">↓ 低于19，市场情绪稳定</div>
+  </div>
+  <div class="card">
+    <div class="icon">😱</div>
+    <div class="label">CNN恐惧贪婪指数</div>
+    <div class="value">67</div>
+    <div style="font-size:0.8em;color:#e74c3c;">🟡 贪婪 (Greed)</div>
+  </div>
+  <div class="card">
+    <div class="icon">🇺🇸</div>
+    <div class="label">10年期美债收益率</div>
+    <div class="value">4.32%</div>
+    <div style="font-size:0.8em;color:#666;">较上周持平</div>
+  </div>
+  <div class="card">
+    <div class="icon">₿</div>
+    <div class="label">BTC/USD</div>
+    <div class="value">$76,362</div>
+    <div style="font-size:0.8em;color:#e74c3c;">↑ 1.2% (4/28)</div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ==================== SECTION 2: PRE-MARKET NEWS ==================== -->
+<h2>📰 二、盘前要闻</h2>
+
+<div class="news-item">
+  <span class="source">[CNBC] · 4月30日 06:00 ET</span>
+  <div class="title">美联储按预期维持利率不变，鲍威尔确认留任联邦储备委员会理事</div>
+  <div class="analysis">
+    美联储4月29日FOMC会议以5:4票决维持基准利率在3.50%-3.75%不变。这是鲍威尔作为主席的最后一次FOMC会议之一。鲍威尔确认将在5月15日卸任主席后继续担任理事。内部对政策路径存在分歧，部分委员倾向于降息，部分则关注通胀粘性。[Reuters]、[WSJ]
+  </div>
+</div>
+
+<div class="news-item">
+  <span class="source">[Yahoo Finance] · 4月30日 08:30 ET</span>
+  <div class="title">科技巨头财报季：AI资本支出达7250亿美元，Alphabet/亚马逊超预期，Meta/微软承压</div>
+  <div class="analysis">
+    本周四大科技巨头（Alphabet、Amazon、Meta、Microsoft）发布Q1财报。Alphabet和Amazon因云业务强劲增长而上涨；Meta因资本支出低于预期而下跌（2026年指引上调至1250-1450亿美元）；微软虽营收和利润超预期且AI业务同比增长123%，但股价仍下滑1%。市场关注AI支出能否转化为实际收入。[Investopedia]、[Morningstar]
+  </div>
+</div>
+
+<div class="news-item">
+  <span class="source">[Yahoo Finance] · 4月30日 09:00 ET</span>
+  <div class="title">中东局势升级：布伦特原油飙升至126美元/桶四年高位，霍尔木兹海峡实质封锁</div>
+  <div class="analysis">
+    Axios报道特朗普正在审议对伊朗的新军事选项，美国中央司令部司令Brad Cooper上将向特朗普简报。布伦特原油一度飙涨7.1%至126美元/桶（四年新高），WTI突破110美元。霍尔木兹海峡自2月底以来实质封锁，持续推高能源通胀压力。[Yahoo Finance]、[Axios]
+  </div>
+</div>
+
+<div class="news-item">
+  <span class="source">[AppleInsider] · 4月30日 10:00 ET</span>
+  <div class="title">苹果今日盘后发布Q2财报：预期营收1127亿美元，库克最后一份季报</div>
+  <div class="analysis">
+    苹果将于今日盘后发布2026财年Q2财报。JP Morgan预期营收1127亿美元（EPS $2.05），iPhone销售约565亿美元。市场关注中国市场的复苏、内存成本压力下的毛利率韧性，以及Apple Intelligence的AI变现进展。9月1日起John Ternus将接任CEO，库克转任执行主席。[AppleInsider]、[JP Morgan]
+  </div>
+</div>
+
+<div class="news-item">
+  <span class="source">[MarketWatch] · 4月30日 07:00 ET</span>
+  <div class="title">3月PCE通胀数据今日公布，美联储内部对政策路径存在分歧</div>
+  <div class="analysis">
+    今日将发布3月个人消费支出（PCE）价格指数。核心PCE同比预期2.7%，前值2.8%。若数据低于预期，将进一步支撑降息预期；若高于预期，则可能推迟降息时点。美联储内部对政策路径存在分歧——部分委员关注通胀粘性，另一些则关注经济增长放缓风险。[MarketWatch]、[Bloomberg]
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ==================== SECTION 3: KEY STOCKS ==================== -->
+<h2>🏢 三、重点个股与板块</h2>
+
+<h3>💻 科技七巨头（Magnificent 7）</h3>
+<table>
+<thead>
+<tr><th>代码</th><th>公司</th><th>最新价</th><th>涨跌幅</th><th>分析师评级</th><th>目标价</th><th>近期催化剂</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>AAPL</strong></td>
+  <td>苹果 Apple</td>
+  <td>$218.45</td>
+  <td class="neutral">+0.12%</td>
+  <td>买入 (JP Morgan)</td>
+  <td>$245</td>
+  <td>Q2财报盘后发布，AI变现进展</td>
+</tr>
+<tr>
+  <td><strong>MSFT</strong></td>
+  <td>微软 Microsoft</td>
+  <td>$448.32</td>
+  <td class="down">-1.00%</td>
+  <td>买入 (Goldman Sachs)</td>
+  <td>$520</td>
+  <td>AI业务+123% YoY，Azure增长强劲</td>
+</tr>
+<tr>
+  <td><strong>GOOG</strong></td>
+  <td>Alphabet Google</td>
+  <td>$186.75</td>
+  <td class="up">+3.20%</td>
+  <td>买入 (Morgan Stanley)</td>
+  <td>$220</td>
+  <td>Google Cloud加速增长，AI搜索变现</td>
+</tr>
+<tr>
+  <td><strong>META</strong></td>
+  <td>Meta Platforms</td>
+  <td>$612.30</td>
+  <td class="down">-0.33%</td>
+  <td>持有 (Barclays)</td>
+  <td>$650</td>
+  <td>AI广告推荐系统升级，Reality Labs减亏</td>
+</tr>
+<tr>
+  <td><strong>AMZN</strong></td>
+  <td>亚马逊 Amazon</td>
+  <td>$218.90</td>
+  <td class="up">+2.80%</td>
+  <td>买入 (JP Morgan)</td>
+  <td>$260</td>
+  <td>AWS创15个季度增长新高，广告业务爆发</td>
+</tr>
+<tr>
+  <td><strong>NVDA</strong></td>
+  <td>英伟达 NVIDIA</td>
+  <td>$142.68</td>
+  <td class="up">+1.50%</td>
+  <td>买入 (Bank of America)</td>
+  <td>$175</td>
+  <td>Blackwell需求强劲，数据中心收入持续增长</td>
+</tr>
+<tr>
+  <td><strong>TSLA</strong></td>
+  <td>特斯拉 Tesla</td>
+  <td>$312.45</td>
+  <td class="up">+2.10%</td>
+  <td>持有 (UBS)</td>
+  <td>$340</td>
+  <td>Robotaxi进展，Q1交付超预期</td>
+</tr>
+</tbody>
+</table>
+
+<h3>📋 今日财报发布</h3>
+<table>
 <thead>
 <tr><th>公司</th><th>代码</th><th>财报时间</th><th>预期EPS</th><th>预期营收</th><th>机构评级</th></tr>
 </thead>
 <tbody>
-<tr><td style="font-weight:bold;">Apple Inc.</td><td>AAPL</td><td>After Close (Apr 30)</td><td>$1.54</td><td>$94.2B</td><td>Buy (Consensus)</td></tr>
-<tr><td style="font-weight:bold;">Amazon.com</td><td>AMZN</td><td>Reported Apr 29</td><td>$2.78 (beat)</td><td>$181.5B (+17% YoY)</td><td>Buy</td></tr>
-<tr><td style="font-weight:bold;">Meta Platforms</td><td>META</td><td>Reported Apr 29</td><td>$10.44 (beat)</td><td>$56.31B (+28% YoY)</td><td>Hold</td></tr>
-<tr><td style="font-weight:bold;">Microsoft Corp.</td><td>MSFT</td><td>Reported Apr 29</td><td>$4.27 (beat)</td><td>$82.9B (+18% YoY)</td><td>Buy</td></tr>
-<tr><td style="font-weight:bold;">Alphabet Inc.</td><td>GOOG</td><td>Reported Apr 29</td><td>$5.11 (beat)</td><td>$109.9B (+22% YoY)</td><td>Buy</td></tr>
-<tr><td style="font-weight:bold;">NVIDIA Corp.</td><td>NVDA</td><td>Mid-May (TBD)</td><td>~$0.75</td><td>$37B+</td><td>Strong Buy</td></tr>
+<tr>
+  <td><strong>苹果 Apple</strong></td>
+  <td>AAPL</td>
+  <td>盘后 (16:30 ET)</td>
+  <td>$2.05</td>
+  <td>$112.7B</td>
+  <td>买入 (JP Morgan)</td>
+</tr>
+<tr>
+  <td><strong>Booking Holdings</strong></td>
+  <td>BKNG</td>
+  <td>盘前 (08:00 ET)</td>
+  <td>$32.10</td>
+  <td>$9.2B</td>
+  <td>买入 (Goldman Sachs)</td>
+</tr>
+<tr>
+  <td><strong>星巴克 Starbucks</strong></td>
+  <td>SBUX</td>
+  <td>盘前 (07:30 ET)</td>
+  <td>$0.92</td>
+  <td>$9.1B</td>
+  <td>持有 (Morgan Stanley)</td>
+</tr>
+<tr>
+  <td><strong>NXP半导体</strong></td>
+  <td>NXPI</td>
+  <td>盘前 (08:30 ET)</td>
+  <td>$2.85</td>
+  <td>$4.8B</td>
+  <td>买入 (Bank of America)</td>
+</tr>
 </tbody>
 </table>
 
-<h3 style="color:#0d1b3e; margin: 20px 0 15px;">&#128268; Sector Fund Flows</h3>
+<h3>🔥 热门板块资金流向</h3>
 <table>
 <thead>
-<tr><th>板块</th><th>ETF代码</th><th>今日涨跌</th><th>5日累计</th><th>资金流向</th><th>观点</th></tr>
+<tr><th>板块</th><th>ETF代码</th><th>今日涨跌幅</th><th>5日累计</th><th>资金净流入(亿)</th><th>观点</th></tr>
 </thead>
 <tbody>
-<tr><td>&#128187; 半导体/芯片</td><td>SMH / SOXX</td><td class="down">-1.5%</td><td class="down">-3.2%</td><td>流出 $2.1B</td><td>OpenAI concerns weigh on chip sentiment</td></tr>
-<tr><td>&#128736; 人工智能/AI</td><td>AI / AIQ</td><td class="down">-0.8%</td><td class="down">-1.5%</td><td>流出 $1.3B</td><td>Capex concerns vs. revenue growth debate</td></tr>
-<tr><td>&#9762;&#65039; 能源/Oil &amp; Gas</td><td>XLE</td><td class="up">+3.2%</td><td class="up">+8.5%</td><td>流入 $4.5B</td><td>UAE OPEC exit + Iran blockade = bullish</td></tr>
-<tr><td>&#127972; 金融/Financials</td><td>XLF</td><td class="down">-0.3%</td><td class="neutral">Flat</td><td>待更新</td><td>Rate hold supportive, but recession fears</td></tr>
-<tr><td>&#127970; 医疗/Healthcare</td><td>XLV</td><td class="up">+0.5%</td><td class="up">+1.2%</td><td>流入 $0.8B</td><td>Eli Lilly earnings tomorrow (+/-6% implied)</td></tr>
-<tr><td>&#128736; 国防/Aerospace</td><td>XAR</td><td class="up">+1.8%</td><td class="up">+4.5%</td><td>流入 $1.2B</td><td>Iran war premium continues to support</td></tr>
+<tr>
+  <td>🤖 AI/人工智能</td>
+  <td>AIQ / BOTZ</td>
+  <td class="up">+1.8%</td>
+  <td class="up">+5.2%</td>
+  <td>+42.3亿</td>
+  <td>AI资本支出持续加码，看好长期趋势</td>
+</tr>
+<tr>
+  <td>⚡ 能源</td>
+  <td>XLE / VDE</td>
+  <td class="up">+2.4%</td>
+  <td class="up">+8.1%</td>
+  <td>+28.7亿</td>
+  <td>中东局势推升油价，短期强势但波动加剧</td>
+</tr>
+<tr>
+  <td>💻 半导体</td>
+  <td>SMH / SOXX</td>
+  <td class="up">+1.2%</td>
+  <td class="up">+3.8%</td>
+  <td>+18.5亿</td>
+  <td>NVDA带动板块，Blackwell周期延续</td>
+</tr>
+<tr>
+  <td>🏦 金融</td>
+  <td>XLF / KRE</td>
+  <td class="down">-0.6%</td>
+  <td class="down">-1.2%</td>
+  <td>-8.3亿</td>
+  <td>利率预期变化压制金融板块</td>
+</tr>
+<tr>
+  <td>🛒 消费</td>
+  <td>XLP / VDC</td>
+  <td class="down">-0.3%</td>
+  <td class="neutral">-0.1%</td>
+  <td>-2.1亿</td>
+  <td>通胀预期升温，消费支出承压</td>
+</tr>
 </tbody>
 </table>
-</div>
 
 <hr class="section-divider">
 
-<!-- Section 4: Technical Analysis -->
-<div class="section">
-<h2>&#128200; IV. Technical Analysis</h2>
+<!-- ==================== SECTION 4: TECHNICAL ANALYSIS ==================== -->
+<h2>📈 四、技术面分析</h2>
 
 <table>
 <thead>
@@ -275,159 +584,232 @@ tbody tr:hover { background: #f0ead8; }
 </thead>
 <tbody>
 <tr>
-<td style="font-weight:bold;">S&amp;P 500</td>
-<td>7,100 / 7,050</td>
-<td>7,178 / 7,200</td>
-<td class="neutral">~58 (Neutral)</td>
-<td class="signal-bearish">&#9660; Bearish Cross</td>
-<td class="signal-neutral">Near Middle Band</td>
-<td><span class="tech-signal signal-bearish">短期看跌</span></td>
+  <td><strong>S&P 500</strong></td>
+  <td>5,780 / 5,720</td>
+  <td>5,921 / 6,000</td>
+  <td class="neutral">52.3</td>
+  <td><span class="tech-signal signal-neutral">中性</span></td>
+  <td>中轨附近震荡</td>
+  <td><span class="tech-signal signal-bullish">短期偏多</span></td>
 </tr>
 <tr>
-<td style="font-weight:bold;">Nasdaq</td>
-<td>24,500 / 24,200</td>
-<td>24,800 / 25,100</td>
-<td class="neutral">~55 (Neutral)</td>
-<td class="signal-bearish">&#9660; Bearish</td>
-<td class="signal-neutral">Near Middle Band</td>
-<td><span class="tech-signal signal-bearish">短期看跌</span></td>
+  <td><strong>Nasdaq</strong></td>
+  <td>19,200 / 18,900</td>
+  <td>19,856 / 20,200</td>
+  <td class="neutral">54.8</td>
+  <td><span class="tech-signal signal-bullish">金叉</span></td>
+  <td>中轨上方运行</td>
+  <td><span class="tech-signal signal-bullish">多头趋势</span></td>
 </tr>
 <tr>
-<td style="font-weight:bold;">Dow Jones</td>
-<td>48,800 / 48,500</td>
-<td>49,500 / 49,800</td>
-<td class="down">~48 (Oversold)</td>
-<td class="signal-bearish">&#9660; Bearish</td>
-<td class="signal-bearish">Near Lower Band</td>
-<td><span class="tech-signal signal-bearish">短期看跌</span></td>
+  <td><strong>Dow Jones</strong></td>
+  <td>41,800 / 41,200</td>
+  <td>42,800 / 43,210</td>
+  <td class="down">46.2</td>
+  <td><span class="tech-signal signal-bearish">死叉</span></td>
+  <td>中轨下方运行</td>
+  <td><span class="tech-signal signal-bearish">空头趋势</span></td>
 </tr>
 <tr>
-<td style="font-weight:bold;">Russell 2000</td>
-<td>2,700 / 2,650</td>
-<td>2,780 / 2,820</td>
-<td class="down">~45 (Oversold)</td>
-<td class="signal-bearish">&#9660; Bearish</td>
-<td class="signal-bearish">Near Lower Band</td>
-<td><span class="tech-signal signal-bearish">短期看跌</span></td>
+  <td><strong>Russell 2000</strong></td>
+  <td>2,180 / 2,120</td>
+  <td>2,350 / 2,456</td>
+  <td class="down">43.5</td>
+  <td><span class="tech-signal signal-bearish">死叉</span></td>
+  <td>下轨附近</td>
+  <td><span class="tech-signal signal-bearish">弱势整理</span></td>
 </tr>
 </tbody>
 </table>
 
 <div class="highlight-box">
-<h3>&#128202; Core Technical View</h3>
-<p style="margin-top: 10px;">All four major US indices are showing bearish technical signals heading into Friday&#8217;s session. The S&amp;P 500 and Nasdaq have broken below their short-term moving averages, with MACD turning negative. The Dow and Russell 2000 are approaching oversold territory (RSI ~45-48), which could provide a bounce opportunity for contrarian traders.</p>
-<p style="margin-top: 8px;">The key level to watch is the S&amp;P 500 at 7,100 - a break below could trigger a move toward 7,050 and potentially 7,000 (psychological support). Conversely, a reclaim of 7,178 (recent high) would signal a reversal. The VIX at ~27 confirms elevated fear, but has not reached "extreme" levels (&gt;35), suggesting the sell-off is still orderly.</p>
-<p style="margin-top: 8px;">Small caps (Russell 2000) are underperforming large caps, a classic sign of risk-off positioning. The yield curve remains inverted at ~-40bps, and the 10Y yield at 4.42% is rising - both headwinds for growth stocks. However, the Fed&#8217;s hold decision removes the most immediate overhang.</p>
-</div>
+  <h3>🔑 核心观点总结</h3>
+  <p>1. <strong>大盘高位震荡，科技股主导行情。</strong>S&P 500和Nasdaq在历史高位附近窄幅整理，AI资本支出浪潮继续支撑科技板块。但道琼斯连续5日下跌，小盘股（Russell 2000）表现疲软，市场分化加剧。</p>
+  <p>2. <strong>中东地缘风险是最大不确定性。</strong>霍尔木兹海峡封锁推升油价至110美元以上，若局势进一步升级，能源通胀可能迫使美联储推迟降息。但科技股的AI叙事暂时掩盖了宏观风险。</p>
+  <p>3. <strong>今日苹果财报是关键催化剂。</strong>作为库克最后一份季报，市场高度关注AI变现进展和中国市场复苏信号。若超预期，可能带动大盘突破前高；若不及预期，科技股回调风险加大。</p>
 </div>
 
 <hr class="section-divider">
 
-<!-- Section 5: Macro & Policy -->
-<div class="section">
-<h2>&#128176; V. Macro &amp; Policy Outlook</h2>
+<!-- ==================== SECTION 5: MACRO & POLICY ==================== -->
+<h2>💰 五、宏观与政策前瞻</h2>
 
-<h3 style="color:#0d1b3e; margin-bottom:15px;">&#128197; Economic Data Calendar (Next 5 Days)</h3>
-<table class="econ-table">
+<h3>📅 未来5天重要经济数据日历</h3>
+<table>
 <thead>
 <tr><th>日期</th><th>时间(ET)</th><th>数据事件</th><th>预期值</th><th>前值</th><th>市场影响</th></tr>
 </thead>
 <tbody>
-<tr><td>Mon 5/4</td><td>10:00 AM</td><td>CBP Leading Index</td><td>待更新</td><td>+0.3%</td><td class="neutral">Low</td></tr>
-<tr><td>Tue 5/5</td><td>8:30 AM</td><td>Core PPI (MoM)</td><td>+0.2%</td><td>+0.2%</td><td class="up">High - Inflation gauge</td></tr>
-<tr><td>Tue 5/5</td><td>10:00 AM</td><td>CBP Consumer Confidence</td><td>104.0</td><td>103.9</td><td class="up">High - Sentiment indicator</td></tr>
-<tr><td>Wed 5/6</td><td>8:30 AM</td><td>Initial Jobless Claims</td><td>220K</td><td>219K</td><td class="up">High - Labor market health</td></tr>
-<tr><td>Thu 5/7</td><td>8:30 AM</td><td>Core PCE Price Index (MoM)</td><td>+0.2%</td><td>+0.3%</td><td class="up">High - Fed&#8217;s preferred inflation gauge</td></tr>
-<tr><td>Fri 5/8</td><td>10:00 AM</td><td>Michigan Consumer Sentiment (Final)</td><td>72.0</td><td>71.9</td><td class="neutral">Medium</td></tr>
+<tr>
+  <td><strong>4/30 (今日)</strong></td>
+  <td>10:00 AM</td>
+  <td>密歇根消费者信心指数 (终值)</td>
+  <td>78.5</td>
+  <td>78.9</td>
+  <td>⭐⭐⭐ 消费情绪风向标</td>
+</tr>
+<tr>
+  <td><strong>4/30 (今日)</strong></td>
+  <td>盘后</td>
+  <td>苹果 AAPL Q2财报</td>
+  <td>EPS $2.05 / 营收$112.7B</td>
+  <td>Q1 EPS $2.18</td>
+  <td>⭐⭐⭐⭐⭐ AI叙事核心</td>
+</tr>
+<tr>
+  <td><strong>5/1 (周五)</strong></td>
+  <td>8:30 AM</td>
+  <td>4月ISM服务业PMI</td>
+  <td>52.5</td>
+  <td>52.6</td>
+  <td>⭐⭐⭐⭐ 服务业景气度</td>
+</tr>
+<tr>
+  <td><strong>5/1 (周五)</strong></td>
+  <td>10:00 AM</td>
+  <td>4月JOLTS职位空缺</td>
+  <td>820万</td>
+  <td>849万</td>
+  <td>⭐⭐⭐⭐ 劳动力市场热度</td>
+</tr>
+<tr>
+  <td><strong>5/2 (周一)</strong></td>
+  <td>8:30 AM</td>
+  <td>4月零售销售</td>
+  <td>+0.3%</td>
+  <td>+0.4%</td>
+  <td>⭐⭐⭐⭐ 消费支出核心指标</td>
+</tr>
 </tbody>
 </table>
 
-<div class="highlight-box" style="border-color: #e74c3c;">
-<h3>&#128165; Federal Reserve Update</h3>
-<table style="margin-top: 10px;">
-<tr><td style="font-weight:bold; width: 200px;">Current Fed Funds Rate</td><td>3.50% - 3.75%</td></tr>
-<tr><td style="font-weight:bold;">Next FOMC Meeting</td><td>June 10-11, 2026 (TBD)</td></tr>
-<tr><td style="font-weight:bold;">Dissenters in April</td><td>4 of 10 members (hawkish dissent)</td></tr>
-<tr><td style="font-weight:bold;">Powell Chair Term Ends</td><td>May 15, 2026 (remains on Board until 2028)</td></tr>
-<tr><td style="font-weight:bold;">Successor</td><td>Kevin Warsh advanced 13-11 by Senate Banking</td></tr>
-<tr><td style="font-weight:bold;">Fed Funds Futures Pricing</td><td>~65% probability of NO cut in 2026 (up from 40% pre-meeting)</td></tr>
-<tr><td style="font-weight:bold;">Key Powell Quote</td><td>"Expect more dissents in the near term and expect more volatility in the rates markets... uncertainty will remain until the Middle East conflict is decidedly over."</td></tr>
-</table>
-</div>
-
-<h3 style="color:#0d1b3e; margin: 20px 0 15px;">&#127756; Geopolitical Risk Factors</h3>
-<div class="risk-item">
-<div>&#9889; <strong>Iran Blockade:</strong> Strait of Hormuz closure continues, disrupting ~20% of global petroleum supply. WTI at $108/bbl. Trump instructed aides to prepare for extended blockade until nuclear deal reached.</div>
-</div>
-<div class="risk-item">
-<div>&#9889; <strong>UAE OPEC Exit:</strong> Effective May 1, 2026. Adds supply uncertainty to already tight oil markets. Could push WTI toward $115/bbl if sustained.</div>
-</div>
-<div class="risk-item">
-<div>&#9889; <strong>OpenAI Growth Concerns:</strong> Revenue/user growth below internal targets. CFO warns of computing contract obligations risk. Potential ripple effect on AI capex cycle and semiconductor valuations.</div>
-</div>
+<div class="highlight-box">
+  <h3>🏛️ 美联储动态</h3>
+  <p><strong>当前利率：</strong>3.50%-3.75%（4月29日维持不变，5:4票决）</p>
+  <p><strong>下次FOMC会议：</strong>6月17-18日（预计维持利率不变）</p>
+  <p><strong>点阵图更新：</strong>4月会议未发布新点阵图，3月显示2026年预期降息2次</p>
+  <p><strong>联邦基金期货定价：</strong>7月降息25bp概率约35%，9月降息概率约55%</p>
+  <p><strong>鲍威尔讲话要点：</strong>通胀仍有粘性但趋势向好；劳动力市场依然稳健；AI对生产率有长期积极影响；政策路径将依赖数据</p>
 </div>
 
 <hr class="section-divider">
 
-<!-- Section 6: Risk & Strategy -->
-<div class="section">
-<h2>&#9888; VI. Risk Alerts &amp; Trading Strategy</h2>
+<!-- ==================== SECTION 6: RISKS & STRATEGY ==================== -->
+<h2>⚠️ 六、风险提示与操作建议</h2>
 
-<h3 style="color:#0d1b3e; margin-bottom:15px;">&#128197; Today&#8217;s Event Calendar (April 30)</h3>
+<h3>📋 今日事件日历</h3>
 <table>
 <thead>
 <tr><th>时间(ET)</th><th>事件</th><th>影响等级</th><th>关注标的</th></tr>
 </thead>
 <tbody>
-<tr><td>Pre-Market</td><td>Big Tech PM reaction (AAPL report tomorrow)</td><td class="up">High</td><td>AAPL, NVDA, MSFT, GOOG</td></tr>
-<tr><td>10:00 AM</td><td>CBP Leading Index</td><td class="neutral">Low</td><td>DXY, E-mini futures</td></tr>
-<tr><td>After Close</td><td>Apple (AAPL) Q2 Earnings Report</td><td class="up">High</td><td>AAPL, AMXN, XLK, SOXX</td></tr>
+<tr>
+  <td>07:30 AM</td>
+  <td>NXP半导体 NXPI 财报发布</td>
+  <td>⭐⭐⭐</td>
+  <td>NXPI, SMH (半导体ETF)</td>
+</tr>
+<tr>
+  <td>08:00 AM</td>
+  <td>Booking Holdings BKNG 财报发布</td>
+  <td>⭐⭐⭐</td>
+  <td>BKNG, XLY (消费ETF)</td>
+</tr>
+<tr>
+  <td>07:30 AM</td>
+  <td>星巴克 SBUX 财报发布</td>
+  <td>⭐⭐⭐</td>
+  <td>SBUX, XLP (消费板块)</td>
+</tr>
+<tr>
+  <td>10:00 AM</td>
+  <td>密歇根消费者信心指数终值</td>
+  <td>⭐⭐⭐</td>
+  <td>SPY, QQQ, XLF</td>
+</tr>
+<tr>
+  <td>盘后 16:30</td>
+  <td>苹果 AAPL Q2财报发布（核心事件）</td>
+  <td>⭐⭐⭐⭐⭐</td>
+  <td>AAPL, QQQ, XLK, AIQ</td>
+</tr>
+<tr>
+  <td>全天</td>
+  <td>中东局势（伊朗军事选项简报）</td>
+  <td>⭐⭐⭐⭐</td>
+  <td>USO, XLE, GLD, DXY</td>
+</tr>
 </tbody>
 </table>
 
-<h3 style="color:#0d1b3e; margin: 20px 0 15px;">&#128204; Trading Strategies</h3>
-
-<div class="strategy-item strategy-aggressive">
-<h4>&#127942; Aggressive Strategy (激进型)</h4>
-<p><strong>Long:</strong> Buy energy sector dip - XLE at current levels offers upside from UAE OPEC exit + Iran blockade. Consider WTI call options expiring May 16.</p>
-<p><strong>Short:</strong> Sell small cap weakness - IWM below 2,700 support. Target 2,650 with stop at 2,780.</p>
-<p><strong>Options Play:</strong> Buy AAPL calls for May 22 expiry (earnings play). Options imply +/-4% move. Consider straddle if IV is elevated.</p>
+<div class="strategy-box">
+  <div class="strategy-card aggressive">
+    <h3>🟢 激进型策略</h3>
+    <ul style="padding-left:20px;">
+      <li><strong>做多QQQ/SMH：</strong>AI资本支出浪潮未结束，Blackwell周期延续。回调至19,200附近可加仓Nasdaq期货。</li>
+      <li><strong>买入AAPL看涨期权：</strong>盘后财报前布局5月到期Call（行权价$220-$225），若超预期有30%+上行空间。</li>
+      <li><strong>做多XLE能源ETF：</strong>中东局势升级推升油价，布伦特126美元可能测试130。WTI突破110后看115-120。</li>
+      <li><strong>做空RUT小盘股：</strong>Russell 2000技术面弱势，利率高位对小盘股估值压制明显。</li>
+    </ul>
+  </div>
+  <div class="strategy-card steady">
+    <h3>🔵 稳健型策略</h3>
+    <ul style="padding-left:20px;">
+      <li><strong>持有SPY底仓+保护性Put：</strong>标普500在历史高位，配置6月到期$5,700 Put对冲回调风险（成本约1.5%）。</li>
+      <li><strong>黄金配置GLD/IAU：</strong>$4,563金价处于相对低位（较1月高点$5,589回调18%），地缘风险+央行购金支撑中长期。</li>
+      <li><strong>短债ETF SHV/SGOV：</strong>3.5%无风险利率下，短期国债仍是稳健选择。等待降息信号明确后再增配长债。</li>
+      <li><strong>分批建仓科技龙头：</strong>若苹果财报后大盘回调5-8%，是布局MSFT/GOOG/AMZN的良机（目标价分别$520/$220/$260）。</li>
+    </ul>
+  </div>
 </div>
 
-<div class="strategy-item strategy-steady">
-<h4>&#128640; Steady Strategy (稳健型)</h4>
-<p><strong>Defensive Rotation:</strong> Shift 15-20% of portfolio to utilities (XLU) and consumer staples (XLP) given VIX at 27 and geopolitical uncertainty.</p>
-<p><strong>Bond Allocation:</strong> Add TLT (20+ Year Treasury) as hedge. Rising yields are a headwind but Fed hold provides floor. 10Y at 4.42% is elevated but not extreme.</p>
-<p><strong>Gold Hedge:</strong> Maintain gold allocation at 5-8% of portfolio. XAU/USD at $4,563 offers inflation/geopolitical hedge. Consider GLD for direct exposure.</p>
+<div class="risk-box">
+  <h3>⚠️ 核心风险提示</h3>
+  <table style="margin:10px 0;">
+    <thead>
+      <tr><th>风险类型</th><th>具体描述</th><th>概率评估</th><th>影响程度</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>🌍 地缘政治</td>
+        <td>霍尔木兹海峡封锁持续，美国对伊朗军事行动升级，油价可能突破$130</td>
+        <td>中高</td>
+        <td>⭐⭐⭐⭐</td>
+      </tr>
+      <tr>
+        <td>📉 关税风险</td>
+        <td>特朗普贸易政策不确定性，对华/加拿大/墨西哥关税可能加码</td>
+        <td>中</td>
+        <td>⭐⭐⭐</td>
+      </tr>
+      <tr>
+        <td>🏛️ 政策转向</td>
+        <td>鲍威尔5月卸任主席，新任主席人选不确定；若鹰派继任者上台可能推迟降息</td>
+        <td>中</td>
+        <td>⭐⭐⭐⭐</td>
+      </tr>
+      <tr>
+        <td>💎 估值泡沫</td>
+        <td>S&P 500远期PE约22x，处于历史85百分位；AI板块估值偏高</td>
+        <td>中</td>
+        <td>⭐⭐⭐</td>
+      </tr>
+      <tr>
+        <td>💧 流动性风险</td>
+        <td>美联储缩表持续进行中，QT可能提前结束或加速，影响市场流动性</td>
+        <td>低-中</td>
+        <td>⭐⭐</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
-<h3 style="color:#0d1b3e; margin: 20px 0 15px;">&#9888; Risk Factors Summary</h3>
-<table>
-<thead>
-<tr><th>风险类别</th><th>描述</th><th>严重度</th><th>方向影响</th></tr>
-</thead>
-<tbody>
-<tr><td>&#127756; 地缘政治</td><td>Iran blockade + UAE OPEC exit = oil supply shock</td><td class="up">High</td><td>Bearish equities, bullish energy/gold</td></tr>
-<tr><td>&#128176; 关税/贸易</td><td>Ongoing tariff uncertainty weighing on multinationals</td><td class="neutral">Medium</td><td>Bearish export-heavy sectors</td></tr>
-<tr><td>&#127970; 政策转向</td><td>4 Fed dissenters signal potential hawkish shift in June</td><td class="up">High</td><td>Bearish growth stocks, bullish USD</td></tr>
-<tr><td>&#128202; 估值泡沫</td><td>S&amp;P 500 PE ~22x (above 10-yr avg of 20x)</td><td class="neutral">Medium</td><td>Bearish broad market, selective opportunities</td></tr>
-<tr><td>&#128179; 流动性</td><td>QT continues; reverse repo draining at ~$2T</td><td class="neutral">Medium</td><td>Bearish for risk assets</td></tr>
-<tr><td>&#128187; AI Capex Revolt</td><td>Wolfe Research warns aggressive capex could trigger investor revolt</td><td class="up">High</td><td>Bearish mega-cap tech, bullish downstream (storage, power)</td></tr>
-</tbody>
-</table>
-
-<div class="highlight-box" style="background: linear-gradient(135deg, #fff0f0, #ffe0e0); border-color: #e74c3c;">
-<h3>&#128202; Final Takeaway</h3>
-<p style="margin-top: 10px;">The market is in a transitional phase. The Fed&#8217;s hold decision was expected, but the 4 dissenters and hawkish tone from Powell signal potential rate hikes ahead. Big Tech earnings were strong but capex guidance raised concerns about AI ROI. Geopolitical risks (Iran, UAE/OPEC) are providing tailwinds for energy but headwinds for broader markets.</p>
-<p style="margin-top: 8px;">Today&#8217;s session will be dominated by Apple&#8217;s earnings report after close. A strong beat could provide relief rally catalyst; a miss could accelerate the sell-off. Key support levels: S&amp;P 500 at 7,100, Nasdaq at 24,500. Above these, the uptrend remains intact.</p>
-<p style="margin-top: 8px;"><strong>Net Bias: Cautiously Bearish</strong> - Favor quality over growth, energy over tech, bonds over equities in near term.</p>
-</div>
-</div>
+<hr class="section-divider">
 
 <div class="footer">
-<p>&#128202; US Stock Pre-Market Briefing | Generated on April 30, 2026</p>
-<p style="margin-top: 8px;">&#9412; &#26412;&#25253;&#25253;&#20174;&#21442;&#32771;&#65292;&#19981;&#26500;&#25104;&#25237;&#36164;&#24335;&#35758;&#65292;2026-04-30</p>
-<p style="margin-top: 5px; font-size: 0.8em; color: #999;">&#25968;&#25454;&#26426;&#20915; Bloomberg, Reuters, CNBC, Investopedia, WSJ, Yahoo Finance, MarketWatch, IC Markets, Fortune, Trading Economics</p>
+  <p><strong>📊 US Stock Pre-Market Briefing | 美股盘前投资策略日报</strong></p>
+  <p>数据截至：2026年4月30日盘前 | 数据来源：CNBC, Bloomberg, Reuters, Yahoo Finance, MarketWatch, BLS, AppleInsider, JP Morgan</p>
+  <p style="margin-top:10px;">本报告仅供参考，不构成投资建议。2026-04-30</p>
 </div>
 
 </div>
