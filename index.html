@@ -3,485 +3,741 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>美股盘前投资策略日报 — 2026年5月19日</title>
+<title>美股盘前投资策略日报 — 2026年5月20日</title>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: #0a1428; color: #e0d8c8; font-family: 'Georgia', 'Noto Serif SC', serif; line-height: 1.7; }
-.container { max-width: 1100px; margin: 0 auto; padding: 30px 20px; }
 
-/* Header */
-.header { text-align: center; padding: 40px 20px 30px; border-bottom: 3px solid #c9a84c; margin-bottom: 30px; position: relative; }
-.header::after { content: ''; display: block; width: 120px; height: 3px; background: linear-gradient(90deg, transparent, #c9a84c, transparent); margin: 15px auto 0; }
-.header h1 { font-size: 36px; color: #c9a84c; letter-spacing: 4px; text-shadow: 0 0 20px rgba(201,168,76,0.3); }
-.header .date { font-size: 18px; color: #8a7d6b; margin-top: 8px; letter-spacing: 2px; }
+body {
+  background: #f5f2eb;
+  color: #1a1a2e;
+  font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.7;
+}
 
-/* Rating */
-.rating-bar { display: flex; align-items: center; justify-content: center; gap: 20px; padding: 20px; background: linear-gradient(135deg, #0d1b3e, #162a54); border-radius: 12px; margin-bottom: 30px; border: 1px solid rgba(201,168,76,0.2); }
-.stars { font-size: 28px; color: #c9a84c; letter-spacing: 4px; }
-.keywords { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
-.keyword-tag { background: rgba(201,168,76,0.15); color: #c9a84c; padding: 4px 14px; border-radius: 20px; font-size: 13px; border: 1px solid rgba(201,168,76,0.3); }
+.container { max-width: 1200px; margin: 0 auto; padding: 40px 30px; }
 
-/* Section */
-.section { margin-bottom: 35px; }
-.section-title { font-size: 22px; color: #c9a84c; padding-bottom: 10px; border-bottom: 1px solid rgba(201,168,76,0.3); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
-.section-title::before { content: '◆'; font-size: 14px; color: #c9a84c; }
+/* ===== HEADER ===== */
+.header {
+  background: linear-gradient(135deg, #0d1b3e 0%, #1a2f6c 50%, #0d1b3e 100%);
+  color: #fff;
+  padding: 50px 40px;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 35px;
+  position: relative;
+  overflow: hidden;
+}
 
-/* Cards Grid */
-.cards-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
-.card { background: linear-gradient(135deg, #0d1b3e, #162a54); border-radius: 12px; padding: 18px; text-align: center; border: 1px solid rgba(201,168,76,0.15); transition: transform 0.2s; }
-.card:hover { transform: translateY(-2px); border-color: rgba(201,168,76,0.4); }
-.card .label { font-size: 13px; color: #8a7d6b; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; }
-.card .value { font-size: 24px; font-weight: bold; color: #e0d8c8; }
-.up { color: #e74c3c !important; }
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(90deg, transparent, transparent 100px, rgba(201,168,76,0.03) 100px, rgba(201,168,76,0.03) 101px);
+}
+
+.header h1 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 36px;
+  color: #c9a84c;
+  margin-bottom: 12px;
+  letter-spacing: 4px;
+}
+
+.header .date-line {
+  font-size: 18px;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 20px;
+}
+
+.stars { color: #c9a84c; font-size: 28px; letter-spacing: 6px; }
+
+.keywords {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+.keyword-tag {
+  background: rgba(201,168,76,0.2);
+  border: 1px solid #c9a84c;
+  color: #c9a84c;
+  padding: 5px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+/* ===== SEPARATOR ===== */
+.gold-divider {
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #c9a84c, transparent);
+  margin: 35px 0;
+  border: none;
+}
+
+.section-title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 26px;
+  color: #0d1b3e;
+  margin-bottom: 24px;
+  padding-left: 18px;
+  border-left: 5px solid #c9a84c;
+}
+
+/* ===== DATA CARDS ===== */
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.data-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 22px 18px;
+  box-shadow: 0 2px 12px rgba(13,27,62,0.08);
+  border-top: 4px solid #c9a84c;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.data-card:hover { transform: translateY(-2px); }
+
+.data-card .label {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.data-card .value {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 24px;
+  color: #0d1b3e;
+  font-weight: 700;
+}
+
+.up { color: #c0392b !important; }
 .down { color: #2ecc71 !important; }
+.neutral { color: #666 !important; }
 
-/* Table */
-.table-wrap { overflow-x: auto; border-radius: 10px; border: 1px solid rgba(201,168,76,0.2); }
-table { width: 100%; border-collapse: collapse; font-size: 14px; }
-thead th { background: linear-gradient(135deg, #0d1b3e, #1a3060); color: #c9a84c; padding: 12px 14px; text-align: left; font-weight: 600; white-space: nowrap; border-bottom: 2px solid #c9a84c; }
-tbody td { padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,0.06); background: rgba(13,27,62,0.5); vertical-align: top; }
-tbody tr:hover td { background: rgba(201,168,76,0.06); }
+/* ===== TABLES ===== */
+.table-wrapper { overflow-x: auto; margin-bottom: 30px; }
 
-/* Rating badges */
-.badge { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 12px; font-weight: bold; white-space: nowrap; }
-.bullish-xx { background: rgba(46,204,113,0.2); color: #2ecc71; border: 1px solid rgba(46,204,113,0.4); }
-.bullish-x { background: rgba(52,180,98,0.15); color: #5fdca8; border: 1px solid rgba(52,180,98,0.3); }
-.neutral { background: rgba(140,136,128,0.2); color: #a09b8f; border: 1px solid rgba(140,136,128,0.3); }
-.bearish-x { background: rgba(231,76,60,0.15); color: #e8837a; border: 1px solid rgba(231,76,60,0.3); }
-.bearish-xx { background: rgba(231,76,60,0.25); color: #ff6b6b; border: 1px solid rgba(231,76,60,0.4); }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(13,27,62,0.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
 
-/* Bar chart CSS */
-.bar-chart { display: flex; align-items: flex-end; gap: 8px; height: 120px; padding: 10px 0; margin: 15px 0; }
-.bar-item { text-align: center; flex: 1; }
-.bar { border-radius: 4px 4px 0 0; min-width: 30px; transition: height 0.3s; position: relative; }
-.bar-label { font-size: 11px; color: #8a7d6b; margin-top: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 80px; margin-left: auto; margin-right: auto; }
+th {
+  background: linear-gradient(135deg, #0d1b3e, #1a2f6c);
+  color: #c9a84c;
+  padding: 14px 16px;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: left;
+  letter-spacing: 0.5px;
+}
 
-/* Strategy box */
-.strategy-box { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
-.strat-card { background: linear-gradient(135deg, #0d1b3e, #162a54); border-radius: 12px; padding: 25px; border: 1px solid rgba(201,168,76,0.2); }
-.strat-card h3 { color: #c9a84c; margin-bottom: 15px; font-size: 18px; }
-.strat-card ul { list-style: none; padding: 0; }
-.strat-card li { padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 14px; }
-.strat-card li::before { content: '▸ '; color: #c9a84c; }
+td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  vertical-align: top;
+}
 
-/* Divider */
-.divider { height: 1px; background: linear-gradient(90deg, transparent, #c9a84c, transparent); margin: 30px 0; }
+tr:hover td { background: rgba(201,168,76,0.05); }
 
-/* Prediction zone */
-.prediction-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
-.pred-card { background: linear-gradient(135deg, #0d1b3e, #162a54); border-radius: 12px; padding: 20px; text-align: center; border: 1px solid rgba(201,168,76,0.15); }
-.pred-card .index-name { font-size: 16px; color: #c9a84c; margin-bottom: 10px; }
-.pred-range { font-size: 13px; color: #8a7d6b; line-height: 2; }
+.rating-bullish-plusplus { color: #c0392b; font-weight: 700; }
+.rating-bullish-plus { color: #e67e22; font-weight: 600; }
+.rating-neutral { color: #7f8c8d; }
+.rating-bearish-minus { color: #3498db; font-weight: 600; }
+.rating-bearish-minusminus { color: #2ecc71; font-weight: 700; }
 
-/* Source */
-.source { font-size: 11px; color: #5a5347; margin-top: 5px; font-style: italic; }
-.timestamp { font-size: 11px; color: #5a5347; }
+.source-link {
+  color: #0d1b3e;
+  text-decoration: none;
+  border-bottom: 1px dotted #c9a84c;
+}
 
-/* Footer */
-.footer { text-align: center; padding: 20px; border-top: 1px solid rgba(201,168,76,0.2); margin-top: 30px; font-size: 12px; color: #5a5347; }
+.source-link:hover { color: #c9a84c; }
 
-/* Calendar */
-.cal-table thead th { text-align: center; }
-.cal-table td:first-child { text-align: left; }
-.cal-table .impact { text-align: center; }
+.timestamp { font-size: 12px; color: #999; display: block; margin-top: 3px; }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .cards-grid { grid-template-columns: repeat(2, 1fr); }
-  .strategy-box, .prediction-grid { grid-template-columns: 1fr; }
+/* ===== MAGNIFICENT SEVEN ===== */
+.seven-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 15px;
+}
+
+.stock-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px 14px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(13,27,62,0.08);
+  border-top: 4px solid #c9a84c;
+}
+
+.stock-card .ticker {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0d1b3e;
+  margin-bottom: 6px;
+}
+
+.stock-card .price {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.stock-card .change {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.stock-card .market-cap {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.stock-card .rating-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge-buy { background: rgba(46,204,113,0.15); color: #27ae60; }
+.badge-hold { background: rgba(241,196,15,0.15); color: #f39c12; }
+.badge-sell { background: rgba(231,76,60,0.15); color: #e74c3c; }
+
+/* ===== CSS BAR CHART ===== */
+.bar-chart-container { margin: 25px 0; }
+
+.bar-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.bar-label {
+  width: 160px;
+  font-size: 13px;
+  color: #0d1b3e;
+  text-align: right;
+  padding-right: 15px;
+  flex-shrink: 0;
+}
+
+.bar-track {
+  flex: 1;
+  height: 28px;
+  background: #eee;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  font-size: 12px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.bar-fill.up-bar { background: linear-gradient(90deg, #c0392b, #e74c3c); }
+.bar-fill.down-bar { background: linear-gradient(90deg, #2ecc71, #27ae60); }
+.bar-fill.neutral-bar { background: linear-gradient(90deg, #c9a84c, #d4b56a); }
+
+/* ===== STRATEGY BOXES ===== */
+.strategy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.strategy-box {
+  background: #fff;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 2px 12px rgba(13,27,62,0.08);
+  position: relative;
+}
+
+.strategy-box.aggressive { border-left: 5px solid #c0392b; }
+.strategy-box.conservative { border-left: 5px solid #2ecc71; }
+
+.strategy-box h3 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 20px;
+  color: #0d1b3e;
+  margin-bottom: 16px;
+}
+
+.strategy-box ul { list-style: none; padding: 0; }
+
+.strategy-box li {
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
+}
+
+.strategy-box li::before { content: '▸ '; color: #c9a84c; }
+
+/* ===== PREDICTION BOXES ===== */
+.prediction-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.prediction-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(13,27,62,0.08);
+}
+
+.prediction-card h4 {
+  font-size: 16px;
+  color: #0d1b3e;
+  margin-bottom: 15px;
+}
+
+.prediction-range {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.range-item .range-label { font-size: 12px; color: #999; }
+.range-item .range-value { font-family: 'Noto Serif SC', serif; font-size: 20px; font-weight: 700; }
+
+/* ===== FOOTER ===== */
+.footer {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  color: #999;
+  font-size: 12px;
+}
+
+.footer a { color: #c9a84c; text-decoration: none; }
+
+/* ===== RESPONSIVE (minimal) ===== */
+@media (max-width: 768px) {
+  .data-grid { grid-template-columns: repeat(2, 1fr); }
+  .seven-grid { grid-template-columns: repeat(2, 1fr); }
+  .strategy-grid { grid-template-columns: 1fr; }
+  .prediction-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 <body>
 <div class="container">
 
-<!-- Header -->
+<!-- ===== HEADER ===== -->
 <div class="header">
   <h1>📊 美股盘前投资策略日报</h1>
-  <div class="date">2026年5月19日（周二）| 数据来源：CNBC、Bloomberg、Yahoo Finance、Trading Economics</div>
-</div>
-
-<!-- Rating & Keywords -->
-<div class="rating-bar">
-  <div>
-    <span style="color:#8a7d6b; font-size:14px;">今日市场评分</span><br>
-    <span class="stars">★★★★☆</span>
-    <span style="color:#c9a84c; margin-left: 5px; font-size:13px;">偏多震荡</span>
-  </div>
+  <div class="date-line">2026年5月20日 · 星期三 · 纽约时间</div>
+  <div class="stars">★★★★☆</div>
+  <p style="margin-top:8px;font-size:14px;color:rgba(255,255,255,0.7);">综合评分：四星 — 温和偏多，关注FOMC纪要与通胀信号</p>
   <div class="keywords">
-    <span class="keyword-tag">科技回调</span>
-    <span class="keyword-tag">伊朗停战</span>
-    <span class="keyword-tag">通胀高企</span>
-    <span class="keyword-tag">新美联储主席</span>
-    <span class="keyword-tag">AI裁员潮</span>
-    <span class="keyword-tag">原油回落</span>
+    <span class="keyword-tag"># FOMC纪要</span>
+    <span class="keyword-tag"># 伊朗局势</span>
+    <span class="keyword-tag"># 通胀回升</span>
+    <span class="keyword-tag"># 原油$104+</span>
+    <span class="keyword-tag"># Warsh接棒Powell</span>
+    <span class="keyword-tag"># AI算力浪潮</span>
   </div>
 </div>
 
-<!-- Core Data Cards -->
-<div class="section">
-  <div class="section-title">核心数据看板（盘前快照）</div>
-  <div class="cards-grid">
-    <div class="card">
-      <div class="label">S&P 500期货</div>
-      <div class="value down">-0.23%</div>
-      <div class="source">周一收盘 -0.07%</div>
-    </div>
-    <div class="card">
-      <div class="label">纳斯达克100期货</div>
-      <div class="value down">-0.46%</div>
-      <div class="source">周一收盘 -0.51%</div>
-    </div>
-    <div class="card">
-      <div class="label">道指期货</div>
-      <div class="value down">-58 pts (-0.12%)</div>
-      <div class="source">周一收盘 +0.32%</div>
-    </div>
-    <div class="card">
-      <div class="label">黄金（盎司）</div>
-      <div class="value up">$4,570</div>
-      <div class="source">+0.67% | 盘中$4,534-$4,593</div>
-    </div>
-    <div class="card">
-      <div class="label">WTI原油（桶）</div>
-      <div class="value down">$103.02</div>
-      <div class="source">-1.31% | 布伦特$108.67</div>
-    </div>
-    <div class="card">
-      <div class="label">美元指数 DXY</div>
-      <div class="value down">99.10 (-0.09%)</div>
-      <div class="source">逼近关键支撑位</div>
-    </div>
-    <div class="card">
-      <div class="label">VIX恐慌指数</div>
-      <div class="value down">17.82 (-3.31%)</div>
-      <div class="source">恐慌情绪回落</div>
-    </div>
-    <div class="card">
-      <div class="label">30年固定抵押利率</div>
-      <div class="value up">6.68%</div>
-      <div class="source">2025年7月以来最高</div>
-    </div>
+<!-- ===== SECTION 1: CORE DATA ===== -->
+<h2 class="section-title">一、核心数据卡（盘前实时）</h2>
+<div class="data-grid">
+  <div class="data-card">
+    <div class="label">S&P 500期货</div>
+    <div class="value down">7,371.50</div>
+    <div style="font-size:12px;color:#999;">-6.50 (-0.09%)</div>
+  </div>
+  <div class="data-card">
+    <div class="label">纳斯达克100期货</div>
+    <div class="value up">28,927.25</div>
+    <div style="font-size:12px;color:#999;">+3.00 (+0.01%)</div>
+  </div>
+  <div class="data-card">
+    <div class="label">道琼斯期货</div>
+    <div class="value down">49,391.00</div>
+    <div style="font-size:12px;color:#999;">-68.00 (-0.14%)</div>
+  </div>
+  <div class="data-card">
+    <div class="label">黄金（美元/盎司）</div>
+    <div class="value down">$4,472</div>
+    <div style="font-size:12px;color:#999;">-10.52 (-0.23%)</div>
+  </div>
+  <div class="data-card">
+    <div class="label">WTI原油（美元/桶）</div>
+    <div class="value up">$103.85</div>
+    <div style="font-size:12px;color:#999;">-0.30 (-0.29%)</div>
+  </div>
+  <div class="data-card">
+    <div class="label">美元指数 DXY</div>
+    <div class="value up">99.33</div>
+    <div style="font-size:12px;color:#999;">+0.01 (+0.01%)</div>
+  </div>
+  <div class="data-card">
+    <div class="label">VIX恐慌指数</div>
+    <div class="value neutral">~17.6</div>
+    <div style="font-size:12px;color:#999;">温和波动区间</div>
+  </div>
+  <div class="data-card">
+    <div class="label">比特币 BTC/USD</div>
+    <div class="value up">$77,215</div>
+    <div style="font-size:12px;color:#999;">+399.56 (+0.52%)</div>
   </div>
 </div>
 
-<div class="divider"></div>
-
-<!-- News Evaluation Table -->
-<div class="section">
-  <div class="section-title">新闻资讯评测表</div>
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th style="min-width:200px;">新闻标题</th>
-          <th>出处 + 时间</th>
-          <th style="min-width:100px;">影响评级</th>
-          <th style="min-width:120px;">利好/利空行业</th>
-          <th style="min-width:180px;">逻辑简述</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>科技股连续两日下跌，存储芯片领跌——Seagate CEO称新厂建设"太慢"</td>
-          <td>CNBC · 5月18日<br><span class="timestamp">盘后更新</span></td>
-          <td><span class="badge bearish-x">🔴 利空 (BEARISH-)</span></td>
-          <td>半导体/存储/AI硬件</td>
-          <td>Seagate跌7%、Micron跌6%，反映AI需求激增下产能瓶颈担忧，拖累科技板块情绪</td>
-        </tr>
-        <tr>
-          <td>特朗普推迟对伊朗进攻，油价小幅回落</td>
-          <td>CNBC · 5月18日<br><span class="timestamp">Truth Social公告</span></td>
-          <td><span class="badge bullish-x">🟢 利好 (BULLISH+)</span></td>
-          <td>能源/化工/航空</td>
-          <td>油价从高位回落缓解通胀压力，亚太市场应声上涨；但布伦特仍超$108/桶</td>
-        </tr>
-        <tr>
-          <td>美国4月CPI升至3.8%，能源成本推高通胀</td>
-          <td>CNN · 5月12日<br><span class="timestamp">BLS官方数据</span></td>
-          <td><span class="badge bearish-x">🔴 利空 (BEARISH-)</span></td>
-          <td>消费/金融/房地产</td>
-          <td>通胀高于预期，加息预期升温；30年抵押利率升至6.68%，压制房地产市场</td>
-        </tr>
-        <tr>
-          <td>凯文·沃什确认出任美联储主席，接替鲍威尔</td>
-          <td>CNN · 5月13日<br><span class="timestamp">参议院确认</span></td>
-          <td><span class="badge bullish-x">🟢 利好 (BULLISH+)</span></td>
-          <td>金融/银行</td>
-          <td>沃什以鹰派著称，暗示利率路径更清晰；市场对其政策连续性有信心</td>
-        </tr>
-        <tr>
-          <td>BofA：科技裁员40%——AI正在重塑行业</td>
-          <td>CNBC · 5月18日<br><span class="timestamp">BofA研报</span></td>
-          <td><span class="badge bearish-x">🔴 利空 (BEARISH-)</span></td>
-          <td>科技/软件/AI</td>
-          <td>4月裁员中40%集中在科技行业，大学毕业生失业率已达衰退水平，消费增长引擎减速</td>
-        </tr>
-        <tr>
-          <td>Meta本周开始新一轮AI裁员</td>
-          <td>CNBC · 5月18日<br><span class="timestamp">盘后报道</span></td>
-          <td><span class="badge neutral">⚪ 中性 (NEUTRAL)</span></td>
-          <td>科技/社交媒体</td>
-          <td>Zuckman推进AI转型，裁员影响公司士气但有助于降本增效</td>
-        </tr>
-        <tr>
-          <td>Musck宣布SpaceX即将IPO提示</td>
-          <td>CNBC · 5月18日<br><span class="timestamp">盘前消息</span></td>
-          <td><span class="badge bullish-x">🟢 利好 (BULLISH+)</span></td>
-          <td>航天/科技</td>
-          <td>SpaceX估值飙升，带动相关科技股和ETF关注度提升</td>
-        </tr>
-        <tr>
-          <td>Musck对OpenAI诉讼获胜——陪审团一致裁决</td>
-          <td>Bloomberg · 5月18日<br><span class="timestamp">下午消息</span></td>
-          <td><span class="badge bullish-x">🟢 利好 (BULLISH+)</span></td>
-          <td>AI/科技</td>
-          <td>微软和NVIDIA持有SpaceX相关敞口受益，AI板块情绪提振</td>
-        </tr>
-        <tr>
-          <td>日本Q1 GDP年化增长2.1%，超预期（预期1.7%）</td>
-          <td>CNBC · 5月19日<br><span class="timestamp">亚洲早盘</span></td>
-          <td><span class="badge bullish-x">🟢 利好 (BULLISH+)</span></td>
-          <td>亚太/出口</td>
-          <td>经济数据强劲，反映全球需求回暖；日经225小幅回调但Topix涨0.61%</td>
-        </tr>
-        <tr>
-          <td>标普500和纳指上周创历史新高后回调</td>
-          <td>CNBC · 5月18日<br><span class="timestamp">盘前分析</span></td>
-          <td><span class="badge neutral">⚪ 中性 (NEUTRAL)</span></td>
-          <td>大盘/科技</td>
-          <td>Schwab首席策略师Gordon称"最佳上涨日已过"，短期获利了结压力增大</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+<!-- ===== SECTION 2: NEWS ANALYSIS TABLE ===== -->
+<h2 class="section-title">二、新闻资讯评测表</h2>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr>
+  <th style="width:18%">新闻标题</th>
+  <th style="width:14%">出处+时间戳</th>
+  <th style="width:10%">链接</th>
+  <th style="width:12%">影响评级</th>
+  <th style="width:18%">利好/利空行业</th>
+  <th style="width:28%">逻辑简述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>FOMC会议纪要公布：通胀压力持续，利率维持不变</td>
+  <td>Kiplinger<br><span class="timestamp">2026-05-20</span></td>
+  <td><a class="source-link" href="https://www.kiplinger.com/investing/economy/this-weeks-economic-calendar">Kiplinger</a></td>
+  <td><span class="rating-bearish-minus">🔴 利空 (BEARISH-)</span></td>
+  <td>科技、消费<br>金融</td>
+  <td>FOMC纪要显示关税与能源通胀持续，多位官员鹰派发言暗示降息推迟；利好利率敏感型行业承压。</td>
+</tr>
+<tr>
+  <td>Warsh接棒Powell成为新任美联储主席</td>
+  <td>Kiplinger<br><span class="timestamp">2026-05-19</span></td>
+  <td><a class="source-link" href="https://www.kiplinger.com/investing/economy/this-weeks-economic-calendar">Kiplinger</a></td>
+  <td><span class="rating-neutral">⚪ 中性 (NEUTRAL)</span></td>
+  <td>金融<br>全市场</td>
+  <td>Kevin Warsh接替Powell，Warsh以鹰派著称但本周尚无明确政策转向信号；市场观望态度。</td>
+</tr>
+<tr>
+  <td>伊朗局势推升油价：WTI突破$103/桶</td>
+  <td>Fortune / TradingEconomics<br><span class="timestamp">2026-05-19</span></td>
+  <td><a class="source-link" href="https://fortune.com/article/price-of-oil-05-18-2026/">Fortune</a></td>
+  <td><span class="rating-bearish-minus">🔴 利空 (BEARISH-)</span></td>
+  <td>能源<br>消费<br>航空</td>
+  <td>中东伊朗冲突持续，霍尔木兹海峡运输受阻风险；油价维持高位推升通胀预期。</td>
+</tr>
+<tr>
+  <td>黄金突破$4,470/盎司历史新高区域</td>
+  <td>Business Insider<br><span class="timestamp">2026-05-20 盘前</span></td>
+  <td><a class="source-link" href="https://markets.businessinsider.com/premarket">BI Markets</a></td>
+  <td><span class="rating-bullish-plusplus">🔴 重大利好 (BULLISH++)</span></td>
+  <td>贵金属<br>矿业<br>能源</td>
+  <td>避险需求+通胀对冲双重驱动；黄金历史高位反映市场对经济不确定性的定价。</td>
+</tr>
+<tr>
+  <td>S&P 500期货微跌，日股 Nikkei 225 大跌1.46%</td>
+  <td>Business Insider<br><span class="timestamp">2026-05-20 盘前</span></td>
+  <td><a class="source-link" href="https://markets.businessinsider.com/premarket">BI Markets</a></td>
+  <td><span class="rating-bearish-minus">🔴 利空 (BEARISH-)</span></td>
+  <td>科技<br>出口导向型</td>
+  <td>亚洲市场领跌传递风险偏好下降信号；日本股市回调或源于日元贬值预期。</td>
+</tr>
+<tr>
+  <td>CPI通胀跳升至3年高位，核心PPI加速攀升</td>
+  <td>MarketWatch<br><span class="timestamp">2026-05-19</span></td>
+  <td><a class="source-link" href="https://www.marketwatch.com/story/inflation-jumps-to-3-year-high-cpi-shows-and-thats-not-the-end-of-it-4de88cd4">MarketWatch</a></td>
+  <td><span class="rating-bearish-minusminus">⛔ 重大利空 (BEARISH--)</span></td>
+  <td>科技<br>消费<br>房地产</td>
+  <td>CPI与PPI双升确认通胀反弹，关税+油价双重推高；可能推迟降息节奏。</td>
+</tr>
+<tr>
+  <td>NVIDIA领涨科技股：AI算力需求持续超预期</td>
+  <td>Bloomberg<br><span class="timestamp">2026-05-12</span></td>
+  <td><a class="source-link" href="https://www.bloomberg.com/news/articles/2025-05-12/stock-market-today-dow-s-p-live-updates">Bloomberg</a></td>
+  <td><span class="rating-bullish-plusplus">🔴 重大利好 (BULLISH++)</span></td>
+  <td>半导体<br>AI科技<br>云计算</td>
+  <td>NVIDIA推动科技股反弹抹平年内跌幅；AI基础设施投资加速，芯片需求旺盛。</td>
+</tr>
+<tr>
+  <td>七巨头财报季临近：微软、谷歌、Meta周三公布业绩</td>
+  <td>CNBC / Yahoo Finance<br><span class="timestamp">2026-05-19</span></td>
+  <td><a class="source-link" href="https://www.cnbc.com/quotes/AAPL,MSFT,AMZN,GOOGL,TSLA">CNBC</a></td>
+  <td><span class="rating-bullish-plus">🟢 利好 (BULLISH+)</span></td>
+  <td>科技<br>半导体<br>互联网</td>
+  <td>本周微软、谷歌、Meta、苹果、亚马逊密集发布财报；AI与云计算增长为关键看点。</td>
+</tr>
+<tr>
+  <td>美元走强：降息预期下移，DXY逼近100关口</td>
+  <td>FX Empire<br><span class="timestamp">2026-05-19</span></td>
+  <td><a class="source-link" href="https://www.marketwatch.com/investing/index/dxy">MarketWatch</a></td>
+  <td><span class="rating-bearish-minus">🔴 利空 (BEARISH-)</span></td>
+  <td>出口<br>新兴市场<br>大宗商品</td>
+  <td>DXY从98.5升至99.3，通胀+利率预期推动美元走强；压制以美元计价的大宗商品。</td>
+</tr>
+<tr>
+  <td>本周经济日历：PMI初值+就业数据密集发布</td>
+  <td>Kiplinger<br><span class="timestamp">2026-05-18~22</span></td>
+  <td><a class="source-link" href="https://www.kiplinger.com/investing/economy/this-weeks-economic-calendar">Kiplinger</a></td>
+  <td><span class="rating-neutral">⚪ 中性 (NEUTRAL)</span></td>
+  <td>全市场</td>
+  <td>周四ISM制造业+服务业PMI初值，周五密歇根消费者信心；数据将验证经济韧性。</td>
+</tr>
+</tbody>
+</table>
 </div>
 
-<div class="divider"></div>
+<!-- ===== SECTION 3: MAGNIFICENT SEVEN ===== -->
+<h2 class="section-title">三、七巨头个股完整分析（5月19日收盘价）</h2>
+<div class="seven-grid">
 
-<!-- Magnificent Seven -->
-<div class="section">
-  <div class="section-title">七巨头个股完整分析</div>
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>公司/代码</th>
-          <th>最新价(USD)</th>
-          <th>涨跌</th>
-          <th>市值</th>
-          <th>评级建议</th>
-          <th>核心逻辑</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>NVIDIA (NVDA)</strong></td>
-          <td>$222.32</td>
-          <td class="down">-1.33%</td>
-          <td>$4.85万亿</td>
-          <td><span style="color:#2ecc71;">买入 ★★★★★</span></td>
-          <td>数据中心AI收入Q4达$623亿(同比+75%)，Morningstar目标价$260；AI算力需求持续爆发</td>
-        </tr>
-        <tr>
-          <td><strong>苹果 (AAPL)</strong></td>
-          <td>$297.84</td>
-          <td class="down">-0.1%</td>
-          <td>$3.9万亿</td>
-          <td><span style="color:#5fdca8;">持有 ★★★★☆</span></td>
-          <td>营收$1,437亿(+15.7% YoY)，EPS $2.84超预期；AI功能升级+回购支撑股价</td>
-        </tr>
-        <tr>
-          <td><strong>微软 (MSFT)</strong></td>
-          <td>$426.06</td>
-          <td class="up">+4.06%</td>
-          <td>$3.2万亿</td>
-          <td><span style="color:#2ecc71;">买入 ★★★★★</span></td>
-          <td>Ackman增持565万股；OpenAI诉讼胜利受益；云业务Azure增速强劲</td>
-        </tr>
-        <tr>
-          <td><strong>谷歌 (GOOGL)</strong></td>
-          <td>$396.94</td>
-          <td class="up">+0.04%</td>
-          <td>$4.79万亿</td>
-          <td><span style="color:#2ecc71;">买入 ★★★★★</span></td>
-          <td>Google Cloud收入同比+63%至$200亿；Berkshire哈撒韦三倍增持；即将发布新Gemini模型</td>
-        </tr>
-        <tr>
-          <td><strong>亚马逊 (AMZN)</strong></td>
-          <td>$268.21</td>
-          <td class="up">+1.4%</td>
-          <td>$2.8万亿</td>
-          <td><span style="color:#5fdca8;">持有 ★★★★☆</span></td>
-          <td>AWS云业务持续扩张；Delta航空选择Amazon而非Starlink，电商基本盘稳固</td>
-        </tr>
-        <tr>
-          <td><strong>META (META)</strong></td>
-          <td>$611.21</td>
-          <td class="down">-0.5%</td>
-          <td>$1.7万亿</td>
-          <td><span style="color:#c9a84c;">观望 ★★★☆☆</span></td>
-          <td>本周开始AI裁员；但广告业务强劲，AI投入产出比改善中</td>
-        </tr>
-        <tr>
-          <td><strong>特斯拉 (TSLA)</strong></td>
-          <td>$409.99</td>
-          <td class="up">+3.2%</td>
-          <td>$1.3万亿</td>
-          <td><span style="color:#5fdca8;">持有 ★★★★☆</span></td>
-          <td>UBS上调评级；Model Y首次提价（自2024年以来）；SpaceX IPO预期提振</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+<div class="stock-card">
+  <div class="ticker">TSLA</div>
+  <div style="font-size:12px;color:#666;">特斯拉</div>
+  <div class="price down">$396.82</div>
+  <div class="change down">-2.7%</div>
+  <div class="market-cap">市值 ~$1,280亿</div>
+  <span class="rating-badge badge-hold">持有观望</span>
 </div>
 
-<div class="divider"></div>
-
-<!-- Economic Calendar -->
-<div class="section">
-  <div class="section-title">本周宏观数据日历（5月19-23日）</div>
-  <div class="table-wrap">
-    <table class="cal-table">
-      <thead>
-        <tr>
-          <th>日期</th>
-          <th>事件名称</th>
-          <th>预期值</th>
-          <th>影响评分</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>周二 5/19</strong></td>
-          <td>美国成屋销售数据（Pending Home Sales）</td>
-          <td>-2.5% MoM</td>
-          <td class="impact">★★★★☆</td>
-        </tr>
-        <tr>
-          <td><strong>周三 5/20</strong></td>
-          <td>美国PPI（生产者价格指数）4月数据</td>
-          <td>+0.3% MoM</td>
-          <td class="impact">★★★★★</td>
-        </tr>
-        <tr>
-          <td><strong>周三 5/20</strong></td>
-          <td>NVIDIA Q1财报（盘后）</td>
-          <td>营收预期$43B+</td>
-          <td class="impact">★★★★★</td>
-        </tr>
-        <tr>
-          <td><strong>周四 5/21</strong></td>
-          <td>美国首次申请失业救济人数</td>
-          <td>22.5万</td>
-          <td class="impact">★★★☆☆</td>
-        </tr>
-        <tr>
-          <td><strong>周四 5/21</strong></td>
-          <td>新美联储主席Warsh首次公开讲话</td>
-          <td>—</td>
-          <td class="impact">★★★★☆</td>
-        </tr>
-        <tr>
-          <td><strong>周五 5/22</strong></td>
-          <td>美国初请失业金人数 + GDP修正值</td>
-          <td>—</td>
-          <td class="impact">★★★★☆</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+<div class="stock-card">
+  <div class="ticker">AAPL</div>
+  <div style="font-size:12px;color:#666;">苹果</div>
+  <div class="price down">$297.09</div>
+  <div class="change down">-3.0%</div>
+  <div class="market-cap">市值 ~$4,580亿</div>
+  <span class="rating-badge badge-hold">持有观望</span>
 </div>
 
-<div class="divider"></div>
-
-<!-- Prediction Zones -->
-<div class="section">
-  <div class="="section-title">涨跌预测区间（今日）</div>
-  <div class="prediction-grid">
-    <div class="pred-card">
-      <div class="index-name">S&P 500</div>
-      <div class="pred-range">
-        <span style="color:#2ecc71;">上行区间：7,430 — 7,480</span><br>
-        <span style="color:#e74c3c;">下行支撑：7,350 — 7,400</span><br>
-        <span style="color:#c9a84c;">中枢：~7,415</span>
-      </div>
-    </div>
-    <div class="pred-card">
-      <div class="index-name">纳斯达克综合指数</div>
-      <div class="pred-range">
-        <span style="color:#2ecc71;">上行区间：13,400 — 13,550</span><br>
-        <span style="color:#e74c3c;">下行支撑：13,200 — 13,350</span><br>
-        <span style="color:#c9a84c;">中枢：~13,380</span>
-      </div>
-    </div>
-    <div class="pred-card">
-      <div class="index-name">道琼斯工业指数</div>
-      <div class="pred-range">
-        <span style="color:#2ecc71;">上行区间：49,600 — 50,000</span><br>
-        <span style="color:#e74c3c;">下行支撑：49,200 — 49,450</span><br>
-        <span style="color:#c9a84c;">中枢：~49,550</span>
-      </div>
-    </div>
-  </div>
+<div class="stock-card">
+  <div class="ticker">NVDA</div>
+  <div style="font-size:12px;color:#666;">NVIDIA</div>
+  <div class="price up">$220.61</div>
+  <div class="change up">+4.5%</div>
+  <div class="market-cap">市值 ~$5,380亿</div>
+  <span class="rating-badge badge-buy">买入/加仓</span>
 </div>
 
-<div class="divider"></div>
+<div class="stock-card">
+  <div class="ticker">MSFT</div>
+  <div style="font-size:12px;color:#666;">微软</div>
+  <div class="price up">$435.00</div>
+  <div class="change up">+0.8%</div>
+  <div class="market-cap">市值 ~$3,030亿</div>
+  <span class="rating-badge badge-buy">买入/加仓</span>
+</div>
 
-<!-- Strategy -->
-<div class="section">
-  <div class="section-title">双策略建议</div>
-  <div class="strategy-box">
-    <div class="strat-card" style="border-color: rgba(231,76,60,0.4);">
-      <h3>🚀 激进型策略（高风险偏好）</h3>
-      <ul>
-        <li><strong>NVDA逢低买入：</strong>回调至$220附近建仓，目标$255-260，止损$215。周三财报前轻仓布局</li>
-        <li><strong>TSLA追涨：</strong>$410区间入场，UBS上调评级+SpaceX IPO预期双重催化，目标$430+</li>
-        <li><strong>做多黄金ETF (GLD)：</strong>伊朗局势未完全解除，油价支撑金价，目标$4,650/oz</li>
-        <li><strong>期权策略：</strong>S&P 500买入7月看涨期权（行权价7,600），博弈夏季AI行情延续</li>
-        <li><strong>仓位建议：</strong>总仓位80-90%，科技权重40%、能源15%、黄金10%</li>
-      </ul>
+<div class="stock-card">
+  <div class="ticker">META</div>
+  <div style="font-size:12px;color:#666;">Meta</div>
+  <div class="price down">$602.61</div>
+  <div class="change down">-1.4%</div>
+  <div class="market-cap">市值 ~$1,570亿</div>
+  <span class="rating-badge badge-buy">买入/加仓</span>
+</div>
+
+<div class="stock-card">
+  <div class="ticker">GOOGL</div>
+  <div style="font-size:12px;color:#666;">谷歌</div>
+  <div class="price up">$387.85</div>
+  <div class="change up">+0.5%</div>
+  <div class="market-cap">市值 ~$4,620亿</div>
+  <span class="rating-badge badge-buy">买入/加仓</span>
+</div>
+
+<div class="stock-card">
+  <div class="ticker">AMZN</div>
+  <div style="font-size:12px;color:#666;">亚马逊</div>
+  <div class="price up">$256.26</div>
+  <div class="change up">+0.3%</div>
+  <div class="market-cap">市值 ~$2,710亿</div>
+  <span class="rating-badge badge-buy">买入/加仓</span>
+</div>
+
+</div>
+
+<!-- ===== SECTION 4: MACRO CALENDAR ===== -->
+<h2 class="section-title">四、本周宏观数据日历（5月18日-22日）</h2>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr>
+  <th style="width:10%">日期</th>
+  <th style="width:30%">事件名称</th>
+  <th style="width:15%">预期值/关注点</th>
+  <th style="width:12%">影响评分</th>
+  <th style="width:33%">解读</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><b>周一 5/18</b></td>
+  <td>NAHB/富国银行住房市场指数（5月）</td>
+  <td>待公布</td>
+  <td>⭐⭐☆</td>
+  <td>衡量新屋建筑商信心，反映利率对房地产影响。</td>
+</tr>
+<tr>
+  <td><b>周二 5/19</b></td>
+  <td>成屋销售签约指数（4月）</td>
+  <td>待公布</td>
+  <td>⭐⭐☆</td>
+  <td>高利率压制购房需求，关注环比变化。</td>
+</tr>
+<tr>
+  <td><b style="color:#c0392b;">周三 5/20 ★</b></td>
+  <td><b>FOMC会议纪要（4月决议）</b></td>
+  <td>利率维持3.50%-3.75%</td>
+  <td>⭐⭐⭐⭐⭐</td>
+  <td>Powell时代最后一次会议！3位委员鹰派异议，通胀"不容小觑"信号明确。</td>
+</tr>
+<tr>
+  <td><b style="color:#c0392b;">周四 5/21 ★</b></td>
+  <td><b>S&P Global PMI初值（服务业+制造业）</b></td>
+  <td>服务: ~58 / 制造: ~54</td>
+  <td>⭐⭐⭐⭐☆</td>
+  <td>通胀跳升后PMI将验证经济扩张速度；若超预期则利好科技股。</td>
+</tr>
+<tr>
+  <td><b>周四 5/21</b></td>
+  <td>周度初请失业金（截至5/16）</td>
+  <td>~40.3万</td>
+  <td>⭐⭐☆</td>
+  <td>劳动力市场稳定信号，关注环比变化。</td>
+</tr>
+<tr>
+  <td><b>周四 5/21</b></td>
+  <td>新屋开工+营建许可（4月）</td>
+  <td>待公布</td>
+  <td>⭐⭐☆</td>
+  <td>房地产周期领先指标，高利率环境下关注增速。</td>
+</tr>
+<tr>
+  <td><b style="color:#c0392b;">周五 5/22 ★</b></td>
+  <td><b>密歇根消费者信心指数（5月终值）</b></td>
+  <td>~61.0</td>
+  <td>⭐⭐⭐⭐☆</td>
+  <td>CPI跳升后消费者情绪或承压；影响消费板块走势。</td>
+</tr>
+<tr>
+  <td><b>周五 5/22</b></td>
+  <td>Conference Board领先指标（4月）</td>
+  <td>-0.1%预期</td>
+  <td>⭐⭐☆</td>
+  <td>综合经济先行指标，衰退预警信号。</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<!-- ===== SECTION 5: PREDICTION RANGES ===== -->
+<h2 class="section-title">五、今日涨跌预测区间（5月20日）</h2>
+<div class="prediction-grid">
+  <div class="prediction-card">
+    <h4>S&P 500</h4>
+    <div style="font-size:13px;color:#999;">昨日收盘：7,359</div>
+    <div class="prediction-range">
+      <div class="range-item"><div class="range-label">看跌区间</div><div class="range-value down">7,280-7,340</div></div>
+      <div class="range-item"><div class="range-label">基准目标</div><div class="range-value neutral" style="color:#c9a84c;">7,350-7,410</div></div>
+      <div class="range-item"><div class="range-label">看涨区间</div><div class="range-value up">7,420-7,480</div></div>
     </div>
-    <div class="strat-card" style="border-color: rgba(46,204,113,0.4);">
-      <h3>🛡️ 稳健型策略（中低风险偏好）</h3>
-      <ul>
-        <li><strong>核心配置：</strong>S&P 500 ETF (VOO) + 科技龙头ETF (QQQ)，各占30%</li>
-        <li><strong>META折价买入：</strong>$610附近建仓，AI裁员利好利润率提升，目标$640</li>
-        <li><strong>GOOGL定投：</strong>Berkshire三倍增持信号明确，$395-400区间分批建仓</li>
-        <li><strong>防御仓位：</strong>短债ETF (SHV) 20% + 黄金(IAU) 10%，对冲通胀风险</li>
-        <li><strong>止损纪律：</strong>个股单只不超过总仓位8%；大盘跌破7,350减仓至60%</li>
-      </ul>
+  </div>
+  <div class="prediction-card">
+    <h4>纳斯达克100</h4>
+    <div style="font-size:13px;color:#999;">昨日收盘：~28,924</div>
+    <div class="prediction-range">
+      <div class="range-item"><div class="range-label">看跌区间</div><div class="range-value down">28,500-28,750</div></div>
+      <div class="range-item"><div class="range-label">基准目标</div><div class="range-value neutral" style="color:#c9a84c;">28,850-29,100</div></div>
+      <div class="range-item"><div class="range-label">看涨区间</div><div class="range-value up">29,200-29,600</div></div>
+    </div>
+  </div>
+  <div class="prediction-card">
+    <h4>道琼斯工业平均</h4>
+    <div style="font-size:13px;color:#999;">昨日收盘：~49,459</div>
+    <div class="prediction-range">
+      <div class="range-item"><div class="range-label">看跌区间</div><div class="range-value down">49,000-49,250</div></div>
+      <div class="range-item"><div class="range-label">基准目标</div><div class="range-value neutral" style="color:#c9a84c;">49,350-49,700</div></div>
+      <div class="range-item"><div class="range-label">看涨区间</div><div class="range-value up">49,800-50,200</div></div>
     </div>
   </div>
 </div>
 
-<div class="divider"></div>
+<!-- ===== SECTION 6: STRATEGY ===== -->
+<h2 class="section-title">六、双策略投资建议</h2>
+<div class="strategy-grid">
 
-<!-- Market Bar Chart -->
-<div class="section">
-  <div class="section-title">板块涨跌热力图（CSS柱状可视化）</div>
-  <div style="background: linear-gradient(135deg, #0d1b3e, #162a54); border-radius: 12px; padding: 25px; border: 1px solid rgba(201,168,76,0.15);">
-    <div style="display:flex; align-items:flex-end; gap:12px; height:140px; justify-content:center;">
-      <div class="bar-item"><div class="bar" style="height:90px; background:linear-gradient(to top, #e74c3c, #ff6b6b); width:40px;"></div><div class="bar-label">半导体</div></div>
-      <div class="bar-item"><div class="bar" style="height:85px; background:linear-gradient(to top, #e74c3c, #ff6b6b); width:40px;"></div><div class="bar-label">AI硬件</div></div>
-      <div class="bar-item"><div class="bar" style="height:75px; background:linear-gradient(to top, #2ecc71, #5fdca8); width:40px;"></div><div class="bar-label">能源</div></div>
-      <div class="bar-item"><div class="bar" style="height:80px; background:linear-gradient(to top, #e74c3c, #ff6b6b); width:40px;"></div><div class="bar-label">科技软件</div></div>
-      <div class="bar-item"><div class="bar" style="height:82px; background:linear-gradient(to top, #e74c3c, #ff6b6b); width:40px;"></div><div class="bar-label">社交媒体</div></div>
-      <div class="bar-item"><div class="bar" style="height:95px; background:linear-gradient(to top, #2ecc71, #5fdca8); width:40px;"></div><div class="bar-label">贵金属</div></div>
-      <div class="bar-item"><div class="bar" style="height:60px; background:linear-gradient(to top, #c9a84c, #e8d5a3); width:40px;"></div><div class="bar-label">金融</div></div>
-      <div class="bar-item"><div class="bar" style="height:70px; background:linear-gradient(to top, #2ecc71, #5fdca8); width:40px;"></div><div class="bar-label">消费</div></div>
-    </div>
-    <div style="text-align:center; margin-top:15px; font-size:12px; color:#5a5347;">
-      🔴 红色=上涨趋势 &nbsp;&nbsp; 🟢 绿色=回调/买入机会 &nbsp;&nbsp; 🟡 金色=中性观望<br>
-      <em>柱高代表板块动量强度（越高越活跃）</em>
-    </div>
-  </div>
+<div class="strategy-box aggressive">
+  <h3>🚀 激进型策略</h3>
+  <ul>
+    <li><b>NVIDIA (NVDA)</b> — AI算力龙头，本周财报预期强劲；目标价$230+，止损$215</li>
+    <li><b>微软 (MSFT)</b> — 周三公布Q1财报，AI云收入增速关键催化剂；目标价$450+</li>
+    <li><b>能源股做多</b> — XOM/CONOCO受益油价高位，WTI维持$103+支撑能源板块</li>
+    <li><b>黄金ETF (GLD)</b> — 避险+通胀双驱动，金价历史新高区域突破即加仓</li>
+    <li><b>做空小盘股</b> — FOMC鹰派信号+通胀回升利好蓝筹，Russell 2000承压</li>
+    <li><b>仓位建议</b> — 总仓位75-85%，科技40% / 能源15% / 贵金属10%</li>
+  </ul>
 </div>
 
-<!-- Footer -->
+<div class="strategy-box conservative">
+  <h3>🛡️ 稳健型策略</h3>
+  <ul>
+    <li><b>S&P 500 ETF (SPY)</b> — 核心持仓，逢回调至7,320附近加仓；目标7,450+</li>
+    <li><b>科技均衡配置</b> — MSFT + GOOGL + AMZN各占10%，分散单一财报风险</li>
+    <li><b>短期国债/现金</b> — 保留20%现金仓位应对FOMC纪要波动，SOFR收益率~3.75%</li>
+    <li><b>防御性板块</b> — 医疗(XLF) + 公用事业(XLU)各占8%，对冲通胀风险</li>
+    <li><b>止损纪律</b> — 个股-5%止损，ETF -3%减仓；FOMC公布后前1小时避免操作</li>
+    <li><b>仓位建议</b> — 总仓位60-70%，科技25% / 防御15% / 债券+现金25%</li>
+  </ul>
+</div>
+
+</div>
+
+<!-- ===== RISK WARNING ===== -->
+<hr class="gold-divider">
+<div style="background:#fff;border-radius:8px;padding:25px;box-shadow:0 2px 12px rgba(13,27,62,0.08);border-left:4px solid #c9a84c;">
+  <h3 style="font-size:16px;color:#0d1b3e;margin-bottom:12px;">⚠️ 今日重点关注</h3>
+  <p style="font-size:14px;color:#555;line-height:1.8;">
+    <b>下午2点FOMC纪要发布</b>：关注通胀措辞和利率路径暗示，鹰派信号将推高国债收益率并压低科技股。
+    <br><b>油价动态</b>：WTI维持$103+高位，伊朗霍尔木兹海峡运输风险未消；若突破$106则触发通胀升级链式反应。
+    <br><b>财报季预热</b>：周三微软/谷歌/Meta、周四苹果/亚马逊密集发布Q1业绩——AI云收入增速是核心看点。
+  </p>
+</div>
+
+<!-- ===== FOOTER ===== -->
 <div class="footer">
-  ⚠️ 免责声明：本报告仅供参考，不构成投资建议。市场有风险，投资需谨慎。<br>
-  数据截至2026年5月19日盘前 | 编制工具：AI分析引擎 v3.2 | © meigu-tzbg
+  <hr class="gold-divider">
+  <p>数据来源：Bloomberg · CNBC · MarketWatch · Kiplinger · TradingEconomics · Business Insider</p>
+  <p style="margin-top:8px;">⚡ 本报告由AI自动生成，仅供参考，不构成投资建议。投资有风险，入市需谨慎。</p>
+  <p style="margin-top:4px;">生成时间：2026年5月20日 | © meigu-tzbg</p>
 </div>
 
 </div>
